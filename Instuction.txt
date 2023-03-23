@@ -1,0 +1,36 @@
+step 1 : 
+add ".env" file and fill up details which i gave you
+
+data should be following details....
+EMAIL=''  (user's email to create many accounts from one email, NOTE: this email should not have any two step authenticator or anything, this can be login just by email and password)
+EMAIL_PASSWORD='' (email's password to login)
+CODESMSKEY='' (login into )getsmscode.com and get a key to get sms and number to create accounts
+DBNAME='' (Mysql database name)
+MY_SQL_USERNAME='' (MySql DB's Username)
+DB_PASSWORD='' (MySQL's DB password)
+DB_HOST='' (MySQL's HOST)
+DB_PORT='' (MySQL's PORT)
+
+step 2: to create env
+run command following commands
+to create env : make env
+to activate env : source env/bin/activate
+to install requirement : make install
+
+step 3 :
+migrate the tables
+run : make migrate
+
+step 4 : 
+to add SeprateTexts data from json files into database
+run : make add_data
+
+step 5 :
+to make accounts or sign up
+run : make signup (add number of accounts you want to create)
+exa. : make signup 10
+
+step 6 : 
+to run Script : make run (number of thread wants to run at once but must be less than 51)
+exa. : make run 50
+
