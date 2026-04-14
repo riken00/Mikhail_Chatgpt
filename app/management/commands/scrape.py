@@ -24,26 +24,14 @@ class Command(BaseCommand):
         )
         
     def handle(self, *args, **options):
-        ThreadNumber = int(options.get('n'))
-        print(ThreadNumber)
-        ThreadNumber = self.get_lowest_number(ThreadNumber)
-        print(ThreadNumber)
-        if ThreadNumber > 51: 
-            print('Please run threading system under number of 51')
-            return
-        random_profile_dic = random.sample(range(1, ThreadNumber+1), ThreadNumber)
-        for i in random_profile_dic:
-            x = threading.Thread(target= self.start_bot, args=(i,))
-            x.start()
+        self.start_bot()
     
-    def start_bot(self,i):
+    def start_bot(self):
         while True:
             try:
-                user_ = user_details.objects.filter(ProfileDict=i).order_by('?')[0]
                 bot = Bot()
                 try: 
-                    bot.get_driver(user_.profile,user_.ProfileDict)
-                    bot.work(user_.email,user_.password)
+                    bot.work()
                     
                 except Exception as e: print(e)
                 finally:

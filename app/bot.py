@@ -17,6 +17,7 @@ from .models import Text as TxtObj, ParaphrasedText, user_details
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
+import undetected_chromedriver as uc
 from dotenv import load_dotenv
 from .sms import get_number,get_sms,ban_number
 load_dotenv()
@@ -36,23 +37,23 @@ def execute_code_from_file(file_path, **kwargs):
 class Bot:
     def __init__(self):
         self.all_response_text = []
-        self.email = os.getenv('EMAIL').replace('@gmail.com','')+'+'+str(random.randint(10000,99999))+'@gmail.com'
+        self.email = os.getenv('EMAIL')
         self.password = os.getenv('EMAIL_PASSWORD')
         
     def get_driver(self,profile_name='Default',profileDict = 'Profiles') :
-        options = webdriver.ChromeOptions()
-        profile_name = str(profile_name)
-        self.profile = profile_name
-        options.add_argument(f"--user-data-dir={profileDict}") 
+        options = uc.ChromeOptions()
+
+        options.add_argument(f"--user-data-dir={profileDict}")
         options.add_argument(f'--profile-directory={profile_name}')
-        # options.headless = True
-        self.driver = uc.Chrome(use_subprocess=True,options=options)
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+
+        self.driver = uc.Chrome(
+            options=options,
+            version_main=145   # 🔥 MATCH YOUR CHROME VERSION
+        )
+
         self.driver.maximize_window()
-        # self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        
-        # profile = webdriver.FirefoxProfile('Profiles_FF')
-        # self.driver = webdriver.Firefox(profile)
-        # self.driver.maximize_window()
         
     def find_element(self, element, locator, locator_type=By.XPATH,
             page=None, timeout=10,
@@ -208,133 +209,57 @@ class Bot:
                 except Exception as e: print(e,'-1111')
         except Exception as e: print(e,'-2222')
 
-    def singup(self,profile_name=''):
-        print('11')
+    def login_chat(self,profile_name='', close_driver=True):
+        def _check_login():
+            self.random_sleep()
+
+            client_script = self.find_element('clinet script','//script[@id="client-bootstrap"]',timeout=5)
+            if client_script:
+                client_script = client_script.get_attribute('innerHTML')
+                if '{"authStatus":"logged_in"' in client_script:
+                    print('Account already exists')
+                    return True
+            return False
+        
         self.get_driver(profile_name )
-        
-        self.driver.get('https://myaccount.google.com/')
-        
-        check_account = self.find_element('check account','/html/body/header/div[1]/div[5]/ul/li[2]/a',timeout=5)
-        if check_account : 
-            if check_account.text == 'Go to Google Account': 
-                check_account.click()
-                account_added = self.login_gmail()
         self.driver.get('https://chat.openai.com/chat')
+
+        if _check_login(): 
+            if close_driver:
+                self.CloseDriver()
+            return True
+
         LogOutbtn = self.click_element('log out','/html/body/div[1]/div[1]/div[2]/div/div/nav/a[5]')
         if LogOutbtn:self.random_sleep()
+        login_btn_cpath = '//button[@data-testid="login-button"]'
         for _ in range(50):
-                self.driver.refresh()
-                welcome_ele = self.find_element('Welcome','//*[@id="__next"]/div[1]/div/div[3]',timeout=2)
-                if welcome_ele:
-                    if welcome_ele.text == 'Log in with your OpenAI account to continue': break
+            self.driver.refresh()
+            welcome_ele = self.find_element('Welcome',login_btn_cpath,timeout=2)
+            if welcome_ele:
+                if welcome_ele.text == 'Log in': break
             
         else:
             self.CloseDriver()
-            return
-        # time.sleep(random.randint(5,10))
+            return False
         
-        self.click_element('Sign up btn','//*[@id="__next"]/div[1]/div/div[4]/button[2]')
+        self.click_element('login btn',login_btn_cpath)
         self.random_sleep()
-        create_acc_h1 = self.find_element('Create acc H1','/html/body/main/section/div/div/header/h1')
-        if create_acc_h1:
-            if 'Create your account' in create_acc_h1.text:
-                # self.get_new_email()
-                # self.change_window(0)
-                break_outer = False
-                for _ in range(3):
-                    
-                    toomany = self.find_element('too many signups','/html/body/main/section/div/div/div/div[1]/p',timeout=3)
-                    if toomany:
-                        if toomany.text == 'Too many signups from the same IP':
-                            return False
-                    
-                    self.input_text(self.email,'Email input','//*[@id="email"]')
-                    self.click_element('Continue','/html/body/main/section/div/div/div/form/div[3]/button')
-                    self.random_sleep()
-                    self.input_text(self.get_new_password(),'Password Input','//*[@id="password"]')
-                    self.click_element('Continue','/html/body/main/section/div/div/div/form/div[3]/button')
-                
-                    for _ in range(3):
-                        verify_enail = self.find_element('Verify email','//*[@id="root"]/div[1]/div/div[2]/h1')
-                        if verify_enail:
-                            if verify_enail.text == "Verify your email":
-                                break_outer = True
-                                break
-                    if break_outer:break
 
-                self.verify_email()
-                
-        fake = Faker()
-        name = fake.name()
-        name_li = str(name).split(' ')
-        self.change_window(-1)
-        self.input_text('Fiestname',name_li[0],'//*[@id="root"]/div[1]/div/div[2]/form/div/div/div[1]/input')
-        self.input_text('lastnamw',name_li[1],'//*[@id="root"]/div[1]/div/div[2]/form/div/div/div[2]/input')
-        time.sleep(2)
-        self.click_element('Continue','//*[@id="root"]/div[1]/div/div[2]/form/button')
-        
-        
-        sent_otp = False
-        get_otp = False
-        # get mobile number
-        for _ in range(3):
-            for i in range(5):
-                
-                number = get_number()
-                if not number : continue
-                self.get_ready_number_page()
-                splited_number = number[2:]
-                self.input_text(splited_number,'Phone number','//*[@id="root"]/div[1]/div/div[2]/form/div[1]/div/div[2]/input')
-                self.click_element('send sms','/html/body/div[1]/div[1]/div/div[2]/form/button')
-                
-                self.random_sleep()
-                code_sent_confirmation = self.find_element('enter code','/html/body/div[1]/div[1]/div/div[2]/h1',timeout=30)
-                if code_sent_confirmation:
-                    if code_sent_confirmation.text == 'Enter code': 
-                        sent_otp = True
-                        break
-                    else : self.click_element('Go back','/html/body/div[1]/div[1]/div/div[3]')
-                else : self.click_element('Go back','/html/body/div[1]/div[1]/div/div[3]',timeout=0)
-                
-            if not sent_otp : 
-                ban_number(number)
-                self.click_element('Go back','/html/body/div[1]/div[1]/div/div[3]')
-                continue
-                
-            for _ in range(3):
-                print(f'trying to get otp : {_+1} Time')
-                otp = get_sms(number)
-                if otp : 
-                    get_otp = True
-                    break
-            else: 
-                ban_number(number)
-                self.click_element('Go back','/html/body/div[1]/div[1]/div/div[3]')
+        if self.input_text(self.email,'Email input','//*[@id="email"]') :
+            self.click_element('Continue','//button[@type="submit"]')
+            self.random_sleep(5,10)
+            pass
 
-            if get_otp : break
-        
-        
-        self.input_text(otp,'otp input','/html/body/div[1]/div[1]/div/div[2]/form/div/div/input')
-        
-        self.random_sleep(10,15)
-        self.driver.refresh()
-        self.click_element('Next btn','/html/body/div[3]/div/div/div/div[2]/div/div/div[2]/div[4]/button')
-        self.click_element('Next btn','/html/body/div[3]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]')
-        self.click_element('Next btn','/html/body/div[3]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]')
-        
-        userr = user_details.objects.create(
-            email = self.email,
-            password = self.password,
-            profile = self.profile
-        )
-        
-        userr.ProfileDict = str(int(userr.id%10))
-        userr.save()
-        
-        self.click_element('log out','/html/body/div[1]/div[1]/div[2]/div/div/nav/a[5]')
+        self.input_text(self.password,'password input','//input[@type="password"]')
+        self.click_element('Continue','//button[@type="submit"]')
 
-        self.random_sleep(20,50)
-                            
+        if _check_login(): 
+            if close_driver:
+                self.CloseDriver()
+            return True
+        
+        return False
+        
     def sign_in(self,UserEmail,UserPassword):
         self.click_element('Login btn','//*[@id="__next"]/div[1]/div/div[4]/button[1]')
         self.input_text(UserEmail,'Username input','//*[@id="username"]')
@@ -392,101 +317,200 @@ class Bot:
         for response in latest_responses:
             self.all_response_text.append(response.text)
 
-    def work(self,UserEmail,UserPassword):
+    # def work(self,UserEmail,UserPassword):
         
-        self.driver.get('https://chat.openai.com/chat')
-        while True:
-            time.sleep(3)
-            capacity = self.find_element('High capacity','//*[@id="__next"]/div[1]/div/div/div[1]/div[1]',timeout=2)
-            if capacity:
-                if 'capacity' in capacity.text.lower():
-                    self.driver.refresh()
-                    continue
-            break                
+    #     self.driver.get('https://chat.openai.com/chat')
+    #     while True:
+    #         time.sleep(3)
+    #         capacity = self.find_element('High capacity','//*[@id="__next"]/div[1]/div/div/div[1]/div[1]',timeout=2)
+    #         if capacity:
+    #             if 'capacity' in capacity.text.lower():
+    #                 self.driver.refresh()
+    #                 continue
+    #         break                
 
-        login_btn = self.find_element('Login btn','//*[@id="__next"]/div[1]/div/div[4]/button[1]',timeout=2)
-        if login_btn:
-            if login_btn.text == 'Log in':
-                self.sign_in(UserEmail,UserPassword)
-                self.click_element('Next pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button',timeout=2)
-                self.click_element('Next2 pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button[2]',timeout=2)
-                self.click_element('Done pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button[2]',timeout=2)
+    #     login_btn = self.find_element('Login btn','//*[@id="__next"]/div[1]/div/div[4]/button[1]',timeout=2)
+    #     if login_btn:
+    #         if login_btn.text == 'Log in':
+    #             self.sign_in(UserEmail,UserPassword)
+    #             self.click_element('Next pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button',timeout=2)
+    #             self.click_element('Next2 pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button[2]',timeout=2)
+    #             self.click_element('Done pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button[2]',timeout=2)
         
-        session_expired = self.find_element('Login expires','//*[@id="headlessui-dialog-title-:r2:"]')
-        if session_expired :
-            if session_expired.text == 'Your session has expired':
-                self.click_element('Login','/html/body/div[3]/div/div/div/div[2]/div/div/div[2]/button')
-                self.sign_in(UserEmail,UserPassword)
-                self.click_element('Next pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button',timeout=2)
-                self.click_element('Next2 pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button[2]',timeout=2)
-                self.click_element('Done pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button[2]',timeout=2)
+    #     session_expired = self.find_element('Login expires','//*[@id="headlessui-dialog-title-:r2:"]')
+    #     if session_expired :
+    #         if session_expired.text == 'Your session has expired':
+    #             self.click_element('Login','/html/body/div[3]/div/div/div/div[2]/div/div/div[2]/button')
+    #             self.sign_in(UserEmail,UserPassword)
+    #             self.click_element('Next pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button',timeout=2)
+    #             self.click_element('Next2 pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button[2]',timeout=2)
+    #             self.click_element('Done pop up btn','//*[@id="headlessui-dialog-panel-:r1:"]/div[2]/div[4]/button[2]',timeout=2)
                 
         
-        time.sleep(random.randint(5,10))
+    #     time.sleep(random.randint(5,10))
 
-        verify_one = self.find_element('Captcha','//*[@id="cf-stage"]/div[6]/label',timeout=2)
-        if verify_one:
-            if str(verify_one.text).upper() == "Verify you are human".upper():
-                self.click_element('Verify box','//*[@id="cf-stage"]/div[6]/label/span',timeout=3)
+    #     verify_one = self.find_element('Captcha','//*[@id="cf-stage"]/div[6]/label',timeout=2)
+    #     if verify_one:
+    #         if str(verify_one.text).upper() == "Verify you are human".upper():
+    #             self.click_element('Verify box','//*[@id="cf-stage"]/div[6]/label/span',timeout=3)
 
-        verify_two = self.click_element('Verify2','//*[@id="challenge-stage"]/div/input',timeout=2)
-        if verify_two:
-            if str(verify_two.text).upper() == "Verify you are human".upper():
-                verify_two.click()
+    #     verify_two = self.click_element('Verify2','//*[@id="challenge-stage"]/div/input',timeout=2)
+    #     if verify_two:
+    #         if str(verify_two.text).upper() == "Verify you are human".upper():
+    #             verify_two.click()
             
         
-        sounds_good = self.find_element('Sounds good','//*[@id="headlessui-dialog-panel-:r1:"]/div[3]/button',timeout=3)
-        if sounds_good:
-            if sounds_good.text.upper() == "Sounds good!".upper():
-                sounds_good.click()
+    #     sounds_good = self.find_element('Sounds good','//*[@id="headlessui-dialog-panel-:r1:"]/div[3]/button',timeout=3)
+    #     if sounds_good:
+    #         if sounds_good.text.upper() == "Sounds good!".upper():
+    #             sounds_good.click()
                 
-        count_sentence = 0
-        for _ in range(random.randint(10,20)):
-            self.all_response_text = []
-            count_sentence+=1
-            text = TxtObj.objects.filter(pharaphreased="NOT_DONE").first() 
-            text.pharaphreased = "RUNNING"
-            text.save()
-            time.sleep(random.randint(5,10))
-            Text = text.text
-            print(Text)
+    #     count_sentence = 0
+    #     for _ in range(random.randint(10,20)):
+    #         self.all_response_text = []
+    #         count_sentence+=1
+    #         text = TxtObj.objects.filter(pharaphreased="NOT_DONE").first() 
+    #         text.pharaphreased = "RUNNING"
+    #         text.save()
+    #         time.sleep(random.randint(5,10))
+    #         Text = text.text
+    #         print(Text)
             
-            response = 0
-            self.pharaprase_text(Text=Text,response=response)
-            for i in range(6):
-                response = self.pharaprase_text(number=random.randint(10,15),Text=Text,another=True,response=response)
-                if response > 50: break
+    #         response = 0
+    #         self.pharaprase_text(Text=Text,response=response)
+    #         for i in range(6):
+    #             response = self.pharaprase_text(number=random.randint(10,15),Text=Text,another=True,response=response)
+    #             if response > 50: break
             
-            print('response',response)
-            self.AddPraprasedSentenceIntoList()
+    #         print('response',response)
+    #         self.AddPraprasedSentenceIntoList()
                 
 
-            if self.not_found_bool == False:
-                number_count = 1
+    #         if self.not_found_bool == False:
+    #             number_count = 1
                 
 
-                PageTitle = self.driver.title
-                for response in self.all_response_text :
-                    print(number_count,response)
-                    ParaphrasedText.objects.create(
-                        sentence = text,
-                        response = response,
-                        PageTitle = PageTitle,
-                        number = number_count 
-                    )
-                    number_count += 1
+    #             PageTitle = self.driver.title
+    #             for response in self.all_response_text :
+    #                 print(number_count,response)
+    #                 ParaphrasedText.objects.create(
+    #                     sentence = text,
+    #                     response = response,
+    #                     PageTitle = PageTitle,
+    #                     number = number_count 
+    #                 )
+    #                 number_count += 1
                     
-                text.pharaphreased = "DONE"
-                text.save()
+    #             text.pharaphreased = "DONE"
+    #             text.save()
             
-            self.click_element('Clear conversation','//*[@id="__next"]/div[1]/div[2]/div/div/nav/a[2]')
-            time.sleep(2)
-            self.click_element('Confirm clear conversation','//*[@id="__next"]/div[1]/div[2]/div/div/nav/a[2]')
-            self.driver.refresh()
-            # self.CloseDriver()
-            # self.get_driver()
-            # self.driver.get('https://chat.openai.com/chat')
-        self.CloseDriver()
+    #         self.click_element('Clear conversation','//*[@id="__next"]/div[1]/div[2]/div/div/nav/a[2]')
+    #         time.sleep(2)
+    #         self.click_element('Confirm clear conversation','//*[@id="__next"]/div[1]/div[2]/div/div/nav/a[2]')
+    #         self.driver.refresh()
+    #         # self.CloseDriver()
+    #         # self.get_driver()
+    #         # self.driver.get('https://chat.openai.com/chat')
+    #     self.CloseDriver()
+
+    def work(self):
+        self.login_chat(close_driver=False)
+        breakpoint()
+        self.driver.get('https://chatgpt.com/')
+        
+        title = "New Way of Energy Dissipation in Graphene Nano-Resonators"
+        desc = """This is a schematic cross-section of a graphene drum. (CREDIT- ICFO) 
+                Energy dissipation is a key element in understanding numerous physical phenomena in thermodynamics, nuclear fission, photonics, photon emissions, chemical reactions, or even electronic circuits, among others. 
+                The energy dissipation in a vibrating system is quantified by the quality factor. If the quality factor of the resonator is high, the mechanical energy will dissipate at an extremely very low rate, and accordingly the resonator will be very accurate at sensing or measuring objects thus enabling these systems to become exciting quantum systems, as well as highly sensitive mass and force sensors. For instance, when a guitar string is made to vibrate, the vibration produced in the string resonates in the body of the guitar. Since the vibrations of the body are robustly coupled to the surrounding air, the energy of the string vibration will dissipate more efficiently into the environment bath, raising the volume of the sound. The decay is established to be linear, as it does not rely on the vibrational amplitude. 
+                Now, shrink the guitar string down to nano-meter dimensions to attain a nano-mechanical resonator. In these nano systems, energy dissipation has been perceived to depend on the amplitude of the vibration, defined as a non-linear phenomenon, and up to now no proposed theory has been demonstrated to properly describe this dissipation process. 
+                In a recent research, published in Nature Nanotechnology , ICFO researchers Johannes Güttinger, Adrien Noury, Peter Weber, Camille Lagoin, Joel Moser, led by Prof. at ICFO Adrian Bachtold, in partnership with researchers from Chalmers University of Technology and ETH Zurich, have established an explanation of the non-linear dissipation process with the help of a nano-mechanical resonator based on multilayer graphene. 
+                In their research, the research team used a graphene-based nano-mechanical resonator, perfectly suited for viewing nonlinear effects in energy decay processes, and measured it with a superconducting microwave cavity. Such a system is can detect the mechanical vibrations in a very short span of time as well as being adequately sensitive to detect minimum displacements and over a very wide range of vibrational amplitudes. 
+                The team took the system, forced it out-of-equilibrium with a driving force, and then turned off the force to measure the vibrational amplitude as the energy of the system decayed. They performed more than 1000 measurements for every energy decay trace and were able to see that as the energy of a vibrational mode decays, the rate of decay touches a point where it alters sharply to a lower value. The larger energy decay at high amplitude vibrations can be described using a model where the measured vibration mode “hybridizes” with another mode of the system and they decay in agreement. This is same as the coupling of the guitar string to the body although the coupling is nonlinear with regards to the graphene nano resonator. As the vibrational amplitude reduces, the rate abruptly changes and the modes become decoupled, causing comparatively low decay rates, thus in very huge quality factors beyond 1 million. This sudden alteration in the decay has never been measured or predicted thus far. 
+                Therefore, the results attained in this research have illustrated that nonlinear effects in graphene nano-mechanical resonators expose a hybridization effect at high energies that, if controlled, could pave the way to new possibilities to control vibrational states, to analyze the collective motion of highly tunable systems, and engineer hybrid states with mechanical modes at totally different frequencies."""
+        
+        prompt = f"""
+            You are a precise news entity extraction API.
+
+            Your job is to extract named entities explicitly mentioned in the input text.
+
+            Scope:
+            - Focus primarily on organizations/startups.
+            - Also extract other named entities when clearly present.
+
+            Allowed entity types:
+            - organization/startup
+            - person
+            - location
+            - institution
+            - investor
+
+            Rules:
+                1. Extract ONLY entities explicitly named in the text. Never infer, guess, or use external knowledge.
+                2. Preserve exact casing as written in the source text.
+                3. If both full name and abbreviation appear, keep ONLY the full name (e.g. keep "U.S. Securities and Exchange Commission", drop "SEC").
+                4. Extract each entity only once. No duplicates.
+                5. When unsure about any entity, skip it. Precision over recall.
+                6. Do NOT extract product names, service names, or generic words.
+                7. Use the most specific type when an entity fits multiple (e.g. "Harvard University" → institution, not location).
+                8. Extract country names, city names, and regions as location type, even when used as geopolitical actors (e.g. "US", "Iran").
+                9. If no entities are found, return an empty list.
+                10. Output must be strict valid JSON only. No markdown, no explanation, no extra text.
+                11. Never extract monetary values, percentages, or numbers as entities (e.g. "$50M", "10%", "2024").
+                12. Never extract job titles or roles as entities (e.g. "CEO", "Chairman", "Founder") — only the person's actual name.
+                13. Never extract time references as entities (e.g. "Q3", "Monday", "this year", "2024").
+                14. If an entity is only implied by a pronoun (e.g. "he", "they", "it"), do not extract it.
+                15. Never extract industry terms or sector names as entities (e.g. "fintech", "AI", "crypto", "SaaS").
+                16. If a location is part of a company name, do not extract it separately (e.g. in "Bank of America", do not extract "America" as a location).
+                17. Never extract adjectives derived from entity names as entities (e.g. "American", "Chinese", "Israeli").
+                18. If a person is referenced only by their last name or first name alone, extract it only if it is completely unambiguous from context.
+                19. Never extract hypothetical or speculative entities (e.g. "a potential acquirer", "an unnamed investor").
+                20. Never extract entities from quoted speech that are not real-world entities (e.g. metaphors, analogies).
+                21. do not add anything in the response that can not convert into the json direct your response
+
+            Return exactly this schema:
+            {{"entities": [{{"name": "string", "type": "string"}}]}}
+
+            Input text:
+            Title: {title}
+            Description: {desc}
+        """
+        self.send_prompt(prompt)
+        self.random_sleep(10,15)
+        print(self.extract_response())
+
+    def send_prompt(self,prompt):
+        text_area = self.find_element('text area', '//div[@id="prompt-textarea"]')
+
+        if text_area:
+            self.driver.execute_script("""
+                const el = arguments[0];
+                const text = arguments[1];
+
+                el.focus();
+                document.execCommand('selectAll', false, null);
+                document.execCommand('delete', false, null);
+
+                const event = new InputEvent('input', {
+                    bubbles: true,
+                    cancelable: true,
+                    data: text
+                });
+
+                el.innerHTML = '<p>' + text + '</p>';
+                el.dispatchEvent(event);
+            """, text_area, prompt)
+            time.sleep(1)
+            self.click_element('send btn', '//button[@data-testid="send-button"]')
+
+    def extract_response(self):
+        all_chat = self.driver.find_elements(By.TAG_NAME,'section')
+        if all_chat:
+            last_response = all_chat[-1]
+            last_response_text = last_response.text
+            if 'ChatGPT said:\n' in last_response_text:
+                last_response_text = last_response.text.replace('ChatGPT said:\n','')
+            response_text = json.loads(last_response_text)
+        return response_text
 
     def CloseDriver(self):
         try:self.driver.quit()
