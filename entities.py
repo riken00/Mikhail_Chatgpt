@@ -17,7 +17,7 @@ MAX_WORKERS = 20
 MAX_RETRIES = 3
 
 
-subscription_key = "7uXTJRDoufrIi9AbAMmNOWWgCDp4RThu8M79e4dIaa2Y9trKDH13JQQJ99CDAC77bzfXJ3w3AAAAACOGWpBZ"
+subscription_key = ""
 api_version = "2024-12-01-preview"
 client = AzureOpenAI(
     api_version=api_version,
