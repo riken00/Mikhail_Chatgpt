@@ -112,7 +112,7 @@ class Crawler:
         3. Auto-crawl pages matching each intent
         """
         logger.info(
-            "🚀 Starting crawl: %s (depth=%d, max_pages=%d, intents=%s)",
+            "Starting crawl: %s (depth=%d, max_pages=%d, intents=%s)",
             self.start_url, self.config.max_depth, self.config.max_pages,
             self.config.page_intents or "none",
         )
@@ -178,7 +178,7 @@ class Crawler:
                 continue
 
             logger.info(
-                "✅ Page %d/%d crawled (depth=%d): %s",
+                "Page %d/%d crawled (depth=%d): %s",
                 len(self.pages), self.config.max_pages, depth, url,
             )
 
@@ -200,7 +200,7 @@ class Crawler:
         # We use the first page's HTML for navigation discovery
         first_result = self._fetcher.fetch(self.start_url)
         if not first_result.success:
-            logger.warning("⚠️ Could not re-fetch start URL for navigation discovery")
+            logger.warning("Could not re-fetch start URL for navigation discovery")
             return
 
         html = first_result.html
@@ -225,7 +225,7 @@ class Crawler:
         matches = self._navigator.find_pages(html, self.start_url, intent, top_n=3)
 
         if not matches:
-            logger.warning("⚠️ No pages found for intent '%s'", intent)
+            logger.warning("No pages found for intent '%s'", intent)
             self._discovery_results[intent] = []
             return
 

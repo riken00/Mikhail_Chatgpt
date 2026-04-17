@@ -79,7 +79,7 @@ class Fetcher:
 
         # robots.txt check
         if self.config.respect_robots and not self._is_allowed(url):
-            logger.warning("🚫 Blocked by robots.txt: %s", url)
+            logger.warning("Blocked by robots.txt: %s", url)
             return FetchResult(
                 url=url, status_code=0, html="", headers={},
                 elapsed_ms=0, success=False,
@@ -92,7 +92,7 @@ class Fetcher:
         # Perform request
         headers = {**self.config.custom_headers, "User-Agent": self._random_ua()}
         try:
-            logger.info("🌐 Fetching: %s", url)
+            logger.info("Fetching: %s", url)
             resp = self._session.get(
                 url, headers=headers, timeout=self.config.timeout,
                 proxies={"http": self.config.proxy, "https": self.config.proxy} if self.config.proxy else None,
@@ -107,7 +107,7 @@ class Fetcher:
                 success=True,
             )
         except requests.RequestException as exc:
-            logger.error("❌ Failed to fetch %s — %s", url, exc)
+            logger.error("Failed to fetch %s — %s", url, exc)
             return FetchResult(
                 url=url, status_code=getattr(exc.response, "status_code", 0) if exc.response else 0,
                 html="", headers={}, elapsed_ms=0, success=False,

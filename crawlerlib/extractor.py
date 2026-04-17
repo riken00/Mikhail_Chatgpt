@@ -122,7 +122,7 @@ class StructuredExtractor:
                 result[label] = content
 
         logger.info(
-            "📦 Extracted %d structured sections from %s",
+            "Extracted %d structured sections from %s",
             len(result), url or "HTML",
         )
         return result
