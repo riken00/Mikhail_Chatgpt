@@ -1,0 +1,1018 @@
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Main Hero Container
+Container X Large 2:
+  Survey Cta:
+    QNu Labs & VIAVI partner to Accelerate Quantum-Safe Network Security: QNu Labs & VIAVI partner to Accelerate Quantum-Safe Network Security
+  Survey Cta Old:
+    Research Questionnaire on Quantum Readiness in Cybersecurity: Research Questionnaire on Quantum Readiness in Cybersecurity
+  content_1:
+    heading: Proactively Securing Data for thePost Quantum Era
+    content_1: Now is the time to strengthen your critical infrastructure with quantum security!
+    content_2: Secure Your Encryption Secure Your Encryption
+  Container Large 33: 86% attacks are now utilizing encryption for their channels. Source: Help Net Security 47% of companies left 1,000+ sensitive files unencrypted. Source: Global Data Risk Report 59% of Ponemon Institute study finds encryption key management painful. Source: Ponemon Institute
+  Container Large 37: Trusted, Recognized, and Featured
+
+## Section Features 01
+Need for Quantum-Resistant Technologies Against Quantum Threats: Need for Quantum-Resistant Technologies Against Quantum Threats Quantum computers threaten classical encryption, highlighting the need for quantum-resistant technologies and secure communication methods to protect against evolving quantum-based attacks on critical information.
+Threats Column:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/669520f4aa03d53c28ddebeb_us-white-house.webp
+  image_alt: whitehouse-quantum-computing
+  description: "To protect against the potential threat of quantum computing in the future, it is necessary to begin updating our IT infrastructure in the United States now."
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/669520b17adf73f5caf54d99_quantum-computer-p.webp
+  image_alt: chinese-researchers-claim-they-broke-encryption-using-quantum-computer
+  description: "Chinese researchers claim they broke RSA encryption using a quantum computer, sparking expert debate over the validity and implications of their discovery."
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6695208995f84aa0b5d6d66a_mit-review-us.png
+  image_alt: mit-technology-review-2022
+  description: "Organizations need to strengthen their cybersecurity now before quantum computing becomes powerful enough to break today’s encryptions."
+Container Btn Center:
+
+## Section Testimonals
+content_1:
+description: Those responsible for identity and access management, blockchain, operational technology, and Internet of Things security must also evaluate the expected time frames of their devices and systems. Any system with an expected use beyond five years will be affected. Commercially available quantum cryptography will require security and risk management leaders to include a plan for post quantum cryptography migration in their operations. QNu Labs offers capabilities that will help organizations move in the direction of technology adoption and provide data security as their competitive advantage.
+Testimonial Author:
+
+## Section Features
+The Revolutionary Potential of Quantum Technology:
+  heading: The Revolutionary Potential of Quantum Technology
+  content_1: WHY QNU LABS
+  description: Quantum technology has the potential to revolutionize various industries and fields, including cybersecurity, by offering unprecedented levels of security due to the fundamental properties of quantum systems.
+Threats Column:
+  description: Quantum physics ensures encryption keys lack patterns, securing data at the source, during transit, and at destination.
+  description: Eavesdroppers can modify single-photon key information during optical transmission, exploiting wavefunction collapse in quantum systems.
+  description: QKDencrypts the keys in some degree of freedom of the elementary particles that follow the laws of quantum mechanics.
+Container Btn Center:
+
+## Section Regular 10
+W Node 163F0C3A B520 08Ce 9E30 123E36148462 553F158A:
+  The World's First Integrated Quantum Technology Platform:
+    heading: The World's First Integrated Quantum Technology Platform
+  content_1: Aggregates NIST-compliant PQC algorithms, patented QRNG technology, robust QKD, and versatile APIs on one system. Embrace the future of digital security withQShield™. Unlock secure connectivity, advanced encryption, and seamless file sharing, all driven by cutting-edge quantum technology. Strengthen and elevate your organization’s security infrastructure like never before with QShield™
+Header Dashboard Wrapper:
+
+## Section Large
+W Layout Grid: Quantum Cryptography: Securing Data in the Post-Quantum Era Quantum mechanics enables data protection through ontic randomness, symmetric key distribution, key management, quantum authentication, and secure communication.
+Column X Large:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/670368a7a15fd2cfecd86a64_qkd%20-%2002%402x.webp
+  image_alt: quantum-key-distribution
+  description: Secure distribution of cryptographic keys detects eavesdropping attempts by measuring disturbances in quantum states
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/670368a7a15fd2cfecd86a6e_qrng%20-%2002%402x.webp
+  image_alt: quantum-random-number-generator
+  description: QRNG generates random numbers using quantum source, enhancing security for encryption and applications.
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/670368a6a15fd2cfecd86a59_pqc-02%402x.webp
+  image_alt: post-quantum-cryptography
+  description: Cryptographic algorithms resistant to quantum attacks ensure long-term security as quantum computing evolves
+
+## Section Partners
+content_1: Flowbase Booster [Carousel Ticker]
+Container Regular: Let's Challenge the Status Quo of DataSecurity Paradigms
+Logo Wrapper:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66a25d5942732481a1b93b93_tcs-logo.png
+  image_alt: tata-consultancy-servies
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66a2637d7e709a7e6a6982ca_cystel.png
+  image_alt: cystel
+content_2:
+  description: QNu has partnered with fellow revolutionists in the quantum field to bring forth a new era of unconditional security, no questions asked.
+
+## Cycle Blog 03
+Title Row 2: Unlock every insight in quantum security
+content_1:
+  content_1: Initialize Swiper
+  Blog Swiper Wrapper:
+    image: https://cdn.prod.website-files.com/6698b1473a89b1bf10e263f0/69de868d0ba5db2aea985691_The%20AI%20That%20Spooked%20Wall%20Street%20Should%20Scare%20You%20Too.webp
+    image: https://cdn.prod.website-files.com/6698b1473a89b1bf10e263f0/69dd575d76eb7421474eb70d_Forensic%20Condensation%20of%20NQM%20Task%20Force%20Report.jpg
+    image: https://cdn.prod.website-files.com/6698b1473a89b1bf10e263f0/695f3d35c20d28144d5c7ff9_case-study-telecom.webp
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Cycle Header 03
+QShield™: QShield™ World’s first unique quantum security platform
+Hero Newsletter Row:
+  content_1: Protect and safeguard confidential information across all environments using cutting-edge unified quantum platform
+
+## Qv Section Bl
+Quantum Security Solutions Unleashed: Quantum Security Solutions Unleashed Experience the future of digital security with QShield™. Secure connectivity, advanced encryption, and file sharing - empower your organization with cutting-edge quantum technology and elevate your security infrastructure.
+Hero Image Large 2:
+W Layout Grid:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66966a88b268bd16ec4e928d_icon-check.svg
+  image_alt: Quantum Computing Threatens Classical Infrastructure Security
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66966a88b268bd16ec4e928d_icon-check.svg
+  image_alt: Quantum Computing Threatens Classical Infrastructure Security
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66966a88b268bd16ec4e928d_icon-check.svg
+  image_alt: Quantum Computing Threatens Classical Infrastructure Security
+content_1:
+
+## Section 5
+image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6800f50a08ae9338b2c6ce42_Frame%20159.png
+description: QShield™ Connect Service Quantum-Safe Network:QShield™ Connect establishes a secure, quantum-resistant network tunnel, protecting your data as it travels across potentially vulnerable networks. Future-Proof Security:It uses quantum encryption to shield communications from current and emerging quantum threats, ensuring long-term data confidentiality. Seamless Integration:Easily integrates with existing infrastructure, providing a smooth transition to quantum-safe communication without disrupting business operations.
+features:
+  Quantum-Safe Network:QShield™ Connect establishes a secure, quantum-resistant network tunnel, protecting your data as it travels across potentially vulnerable networks.
+  Future-Proof Security:It uses quantum encryption to shield communications from current and emerging quantum threats, ensuring long-term data confidentiality.
+  Seamless Integration:Easily integrates with existing infrastructure, providing a smooth transition to quantum-safe communication without disrupting business operations.
+image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6703dbce176536fb82db5bc8_q-vault%402x.png
+description: QShield™ Vault Service Quantum-Encrypted Data Storage:QShield™ Vault offers a secure, quantum-safe storage solution, ensuring your most sensitive data remains protected from quantum attacks. Tamper-Evident Safeguards:Advanced security measures within QShield™ Vault detect and prevent unauthorized data access, maintaining data integrity. Scalable Security:Designed to grow with your organization, QShield™ Vault scales to accommodate increasing data storage needs while maintaining high levels of security.
+features:
+  Quantum-Encrypted Data Storage:QShield™ Vault offers a secure, quantum-safe storage solution, ensuring your most sensitive data remains protected from quantum attacks.
+  Tamper-Evident Safeguards:Advanced security measures within QShield™ Vault detect and prevent unauthorized data access, maintaining data integrity.
+  Scalable Security:Designed to grow with your organization, QShield™ Vault scales to accommodate increasing data storage needs while maintaining high levels of security.
+image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6703dbce176536fb82db5c42_q-collaboration%402x.png
+description: QShield™ Collaboration Service Secure Quantum Messaging:QShield™ Collaboration ensures that all communications within your organization are encrypted with quantum-safe technology, preventing eavesdropping and data breaches. Protected File Sharing:Offers secure, quantum-resistant file sharing, allowing teams to collaborate on sensitive documents without risking data exposure. Cross-Platform Compatibility:QShield™ Collaboration is compatible with various platforms, ensuring that your team can securely communicate and share files regardless of the tools they use.
+features:
+  Secure Quantum Messaging:QShield™ Collaboration ensures that all communications within your organization are encrypted with quantum-safe technology, preventing eavesdropping and data breaches.
+  Protected File Sharing:Offers secure, quantum-resistant file sharing, allowing teams to collaborate on sensitive documents without risking data exposure.
+  Cross-Platform Compatibility:QShield™ Collaboration is compatible with various platforms, ensuring that your team can securely communicate and share files regardless of the tools they use.
+
+## Cta Section Dark
+Empower Your Future with Quantum Security Today: Empower Your Future with Quantum Security Today Reach out today to schedule a consultation or request a demo, and see how our quantum solutions can revolutionize your security strategy.
+Container Btn Center 4:
+
+## Section Testimonals
+content_1:
+description: "At Urban Matrix, we have leveraged QNu's encryption APIs for our multiple communication channels. We are also collaborating with QNu Labs for the joint development of quantum secure communication for our UAVs targeting the Indian defence. We are pleased to be working with a pioneer in quantum encryption technology."
+Testimonial Author:
+  content_1:
+  content_2: Rishabh Verma  |  Co-Founder and CEO
+
+## Section Info
+title: Powered by the Most Advanced Technology Based on Quantum Physics
+description: The foundation of QShield effectiveness and robustness lies in quantum physics, the undisputable scientific phenomenon for foolproof security.
+image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6703cead9652c7550cb5fa43_intergrates-ui.svg
+image_alt: Quantum Computing Threatens Classical Infrastructure Security
+description: Easy APIs to enable 3rd party applications to upgrade to quantum security Centralized provisioning and configuration of the entire platform including underlying hardware Enables control / administer usage of the platform’s functionality and services for its users Enables control / administer usage of the platform’s functionality and services for its users Offers native user management, integrates with 3rd party identity systems for seamless authentication Efficiency has significantly improved, leading to a clear and tangible impact.
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Hero Product Sc
+W Node 4Cd4D4E3 4Af7 90A7 6Cf6 1229C45465F4 32E54447:
+  QVerse – Quantum Safe Messaging & Collaboration Platform: QVerse – Quantum Safe Messaging & Collaboration Platform Unbreakable. Private. Instant. Secure. Sovereign
+  description: Protect sensitive communication globally with India’s fully home grown post quantum encrypted instant messaging and collaboration tool - designed for web and mobile, future proofed for today’s government, defence & enterprises.
+  Button Wrapper:
+W Node 4Cd4D4E3 4Af7 90A7 6Cf6 1229C4546628 32E54447:
+
+## Qv Section W
+Why QVerse?:
+  heading: Why QVerse?
+  description: QVerse is India’s firstquantum-safe messagingplatform purpose-built for enterprises that demand real resistance against both current cyber threats and quantum-enabled attacks.
+  text_1: Offering intuitiveweb & mobile access,advanced admin controls, data protection, and remote-wipe,consent-based messaging sharing, containerised security—all powered byNIST-aligned post-quantum algorithms—it beats consumer apps and foreign rivals in trust, control, quantum-safe cryptography and transparency.
+Competitive Landscape:
+  heading: Competitive Landscape
+  content_1:
+    W Layout Grid: Solution QVerse NetSfere Apple iMessage (PQ3) PQChat WhatsApp
+    content_1: Quantum Safety Post-quantum (Kyber/lattice), Quantum end-to-end ML-KEM quantum-ready PQ3 post-quantum Quantum-resistant Admin Controls Granular messaging, DLP, remote-wipe Standard Enterprise Consumer-grade Biometric MFA Standard Enterprise Deployment Options SaaS, Private Cloud, On-premise, Local container-based security Cloud only Apple Ecosystem Desktop/Mobile Cloud Consent based Consent based message sharing Native Indian Full-stack
+  content_2:
+    W Layout Grid: Solution Quantum Safety Admin Controls Deployment Options Native Indian Built for India and Global
+    content_1: QVerse (PQC+Advanced Quantum security) PQC Post-quantum ( Crystals-Kyber , Lattice cryptography **) End to End Consent-based message sharing Containerised security Granular messaging, DLP, remote-wipe SaaS, private cloud, on premise Full-stack NetSfere ML-KEM quantum-ready Standard enterprise Cloud only Apple iMessage (PQ3) PQ3 post-quantum (Uses Level 3 security using Kyber + ECC) Consumer-grade Apple ecosystem PQChat Quantum-resistant Biometric MFA Desktop/Mobile WhatsApp Standard Enterprise Cloud Signal PQ3 post-quantum (CRYSTALS-Kyber) Level 2 security using its own PQDXH and Elliptic curve cryptography (X25519) (Source: Signal , Hackernews ) Standard enterprise Cloud Telegram Consumer-grade Cloud Facebook Messenger Consumer-grade Cloud Slack (use ASEC) Standard enterprise Cloud MS Teams Standard enterprise Cloud
+description: ** Lattice based cryptography is far more secure than classical RSA, ECC, elliptic-curve cryptography. NIST, USA in 2024 has mandated the algorithm that uses lattice based cryptography and this can’t be hackable by quantum computers. Whereas quantum computers can hack RSA, ECC, and elliptic curve easily in seconds to minutes.(Source: Wikipedia)
+content_1:
+
+## Qv Section Bl
+Why QVerse Leads: Why QVerse Leads QVerse leads as India's first commercial quantum-safe SaaS for regulated sectors, offering complete admin control, end-to-end quantum security, and unlocked access on web and mobile.
+W Layout Grid:
+  description: Battle-tested and deployed across critical sectors like BFSI and Defence, ensuring real-world reliability and trust.
+  description: Advanced admin tools offer full visibility, access management, policy enforcement, and remote wipe capabilities.
+  description: Engineered for regulatory-heavy industries with full support for data residency, audits, and security certifications.
+  description: Seamless, fully-featured apps for Android, iOS, and web—independent of any third-party ecosystem.
+  description: Supports SaaS, private cloud, and on-premise deployment to match your IT and compliance preferences.
+  description: Proudly built in India with quantum-grade tech - trusted by enterprises across India, Europe, and the Middle East.
+content_1:
+
+## Qv Section Dr
+Integration Content:
+  Built for Global Enterprises Across Sectors: Built for Global Enterprises Across Sectors FromBFSI, Healthcare, and Telecom to Defence, Critical Infrastructure, and Energy,QVerse delivers secure and compliant communication infrastructure trusted acrossIndia, USA, Middle East, and Europe.
+  Button Wrapper:
+
+## Qv Section Bl (2)
+QVerse: A Fortress for Enterprise Communications: QVerse: A Fortress for Enterprise Communications From quantum-safe messaging to granular device management, QVerse is built for enterprise needs. Secure your data, control user access, and enable seamless collaboration.
+Bento Grid Wrapper:
+  W Layout Grid:
+    text: End-to-End Quantum Safe Messaging1-to-1, group, and broadcast messaging with lattice-based encryption.Auto-expiry messages (01 min to 24 hrs).File, audio, video sharing—all quantum-safe, containerised and seamless.
+    text: Data Privacy & DLP ControlsEncrypted vault storage for sensitive docs.Prevention of screenshots/screen recording.Files remain within the app - Consent based file sharing.
+    text: Smart Admin ControlsGroup policies: limit media, roles, permissions.Admins can define the allowed file types and sizes.User audit logs, session tracking, and report export.
+  W Layout Grid (2):
+    text: Mobile and Web CollaborationFully native Android, iOS, and web clients.Dual-factor access (OTP + passcode).Real-time sync of messages, calls, and files.
+    text: Onboarding and Device ManagementAdmin portal with OTP-based onboarding.Remote data wipe for compromised devices.Compliance dashboard with user status.
+content_1:
+
+## Qv Section W (2)
+How Does QVerse Work?: How Does QVerse Work? Deployable via SaaS, cloud, or app stores, QVerse offers quantum-safe encrypted messaging. Admins get full policy control while users enjoy a seamless, secure experience.
+Process Relative Wrapper:
+  W Layout Grid:
+    description: Deploy via SaaS or private cloud or marketplace (Playstore or Apple store) or on-premises.
+    description: Onboard your users securely with one-time password links.
+    description: All messaging is encrypted with AES-256 plus post‑quantum lattice KEM (CRYSTALS‑Kyber).
+    description: Admins control policies, users, device security, and reports.
+    description: A seamless web/mobile experience with enterprise-grade security.
+content_1:
+
+## Qv Section Testi
+content_1: Flowbase Booster [Carousel Ticker]
+Container Regular 20:
+  content_1:
+    title: “For national defence, security can’t be compromised. QVerse gives our teams an encrypted communication system that’s tamper proof, audit friendly, and doesn’t rely on foreign platforms. Proud to use an Indian innovation.”
+    title: “We never knew there was a 100% Indian made…quantum secure messaging and collaboration SaaS platform that works perfectly on web and mobile. QNu Labs made it possible.”
+
+## Qv Section Dr (2)
+content_1: Ready to Go Quantum‑Safe? Experience the power of India’s first quantum‑safe messaging system.
+content_2:
+
+## Qv Section 04
+Frequently asked questions: Frequently asked questions
+content_1:
+  description: It uses NIST‑approved post‑quantum algorithms (e.g., CRYSTALS‑Kyber) toresist attacks from quantum computers—unlike RSA or ECC, which are vulnerable.
+  description: Unlike consumer apps, QVerse offers enterprise-grade admin controls (remote wipe, DLP, audit), quantum-safe encryption, and India-based SaaS deployment with local and global compliance.
+  description: Yes—full-featured native apps on mobile and any modern browser, fullysynced.
+  description: Admin can erase all app data remotely andrevoke access instantly.
+  description: Yes. Admin sets granular file/media sharing rules via policies.
+  description: Yes. Private cloud/on‑premises options are available, especially fordefence or regulated sectors.
+  description: Currently text and file collaboration; voice/video calling is in the roadmap.
+  description: No—fully compliant with data residency, hosted within India unless privatecloud deployed.
+  description: Lattice-based cryptography is a branch of post-quantum cryptography built on the complexity of mathematical puzzles called lattice problems, likeShort Integer Solution (SIS) and Learning With Errors (LWE). These problems are considered so tough that not even quantum computers can crack them. First introduced by Ajtai in 1996 and later developed further by Regev in 2005, this approach now underpins advanced post-quantum algorithms like NTRU and CRYSTALS-Kyber.
+  description: Traditional encryption methods such as RSA and ECC are vulnerable to quantum attacks—specifically from Shor’s algorithm, which can break them with ease. In contrast, lattice-based problems like SIS and LWE stay hard even in the face of quantum computing. That’s why many experts consider these systems genuinely quantum-safe and future-proof.
+  description: Among the most widely adopted lattice-based schemes are NTRU and CRYSTALS-Kyber. NTRU is based on polynomial rings and the SIS problem, while Kyber is a key encapsulation mechanism (KEM) that’s part of NIST’s post-quantum cryptography standardization push. Both are designed to be secure even against quantum adversaries.
+  description: WhatsApp is NOT quantum safe. WhatsApp uses Curve25519 elliptic curve cryptography (ECC), which—while strong by today’s standards—is breakable by quantum computers using Shor’s algorithm. It hasn't yet integrated any lattice-based cryptography or hybrid post-quantum encryption.
+  description: Signal uses X25519 (another ECC method) and uses its own PQDXH protocol to supportpost-quantumcryptography and this is at thelevel 2 security level, whereas other players, such asApple iMessage use level 3 security(still susceptible to break by quantum computes) andQNu Labs’ QVerse (unhackable by quantum computers) uses 100% NIST compliance PQC algorithms with future advanced end-to-end quantum-security. This means that once large-scale quantum computers are viable, Signal’s encryption protocol would be at risk.
+  description: No, these messaging and collaboration apps still depend on classical ECC and standard TLS protocols. None of them currently implement quantum-safe encryption methods like lattice-based schemes or hybrid models.‍Slack's Current Encryption in Details (Source: Slack Security)‍Data in transit:Slack usesTLS 1.2 protocolsto encrypt data transmitted between users and the Slack servers.‍Data at rest:Slack encrypts stored data usingAES-256 encryption.‍No end-to-end encryption:This means thatSlack, as a service provider, can access and potentially decrypt user messages, unlike end-to-end encrypted messaging appswhere only the sender and receiver can decrypt the message
+  description: To some extent. iMessage relies on ECC encryption andhasn’t adopted lattice-based KEMs. Apple uses PQ3 (Level 3 Security) to becompliant with PQC to some extent with PQC key establishment, and ongoing PQC rekeying. Unless Apple makes a shift, it won’t be secure in the quantum computing world.
+  description: GB Messenger, being a modified version of WhatsApp, uses the same Curve25519 ECC encryption. Since it hasn't introduced any post-quantum cryptography, it faces the same vulnerabilities as its parent app when quantum threats arrive.
+  description: QVersefollows a tiered subscription model tailored to enterprise needs, offering per-user or per-group pricing. Volume licensing and regulatory bundle options are available for BFSI, legal, defense, PSU, and other clients. Custom integrations or audit/reporting modules may carry a one-time setup fee.Contact us for a demoand quote based on your deployment scale.
+  description: Qverse isn’t just another encrypted chat tool—it’s designed forsensitive environmentslike defense, BFSI, pharma, and government. Here’s what sets it apart: Other apps secure messagesin transit. QVerse locks thembefore, during, and after communication—and enforces it withgranular admin controls.
+  features:
+    ‍Post-quantum encryption: Traditional apps use ECC; Qverse uses hybrid cryptography, combining AES-256 with quantum-safe key encapsulation (Kyber/NTRU).
+    Message Vault & No-Screenshot Policy: High-value data (e.g., passwords, OTPs, trade secrets) is secured in an access-controlled vault—can't be screenshotted or forwarded.
+    Audit Trails & Remote Wipe: Admins can monitor sessions, manage access, and even remotely delete data on lost devices.
+  description: Because your existing encryption has anexpiry date. ECC and RSA, used by 90% of messaging tools, are vulnerable to quantum decryption. Nation-state and APT actors are alreadyharvesting encrypted data todayto break it later (Y2Q risk).Across industries, breaches show secure-looking 1:1 or group messages are often intercepted:QVerse protects your people and teams from interception, data exfiltration, and improper access—even from internal or external adversaries.What’s at stake across sectors:‍ QVerse gives youtrue E2E quantum encryptionusing NIST-standardized algorithms (e.g., Kyber, NTRU, Lattice). Its differentiators are: GivenRegulatory compliancewith upcoming legislation demanding post quantum readiness, QVerse is a must for every organization. It’sfuture-proof, zero-trust by design,andenterprise-ready.
+  features:
+    Government, BFSI, Telco: The TeleMessage breach exposed metadata and message logs of over 60 US officialsmoldstud.com
+    BFSI: Internal messages from client advisors stolen viadesktop sync folders.
+    Corporate & Legal:Slack, Discord, Microsoft services had major leaks of messages/files affecting millionstechepages.com
+    Telecom:MITM hacking of voice/text records (Salt Typhoon) shows encryption at rest/transit is vulnerablepeople.com+1nypost.com+1
+    Cross-Platform Messaging:Push notification leaks via Firebase expose metadata/contentarxiv.org
+    Legal & Pharma:Screenshots of case details shared via Signal/Slack.
+    Aviation:Group comms leaked during supply chain handoffs.
+    Consent based message sharing, forward secrecy/ Control based data sharing
+    Control who gets access to your confidential documents
+    Containerized security, timed deletion, vaulting, screen restriction, and server + device-level access controls
+    No geo-location tracking | Provides maximum document and IPR security
+    Unbreakable security without relying on a third party; data stays on the premise  ​
+  description: Algorithms like RSA-2048 and ECC-256 are mathematically breakable by Shor’s algorithm on a large enough quantum computer. Even before that, side-channel attacks and hardware-based key theft were growing. Data that’s encrypted today could be decrypted tomorrow—unless your encryptionremains resistant even under quantum conditions, like with Kyber or LWE-based lattice cryptography.
+  features:
+    Request a demoand threat mapping session.
+    Choose deployment model: on-premises, secure cloud, or hybrid.
+    Onboard usersvia admin console (email/mobile OTP).
+    Configureaccess policies, audit dashboards, and file sharing limits.
+    Enablevault, timer messages, remote wipe, and other modules based on department needs.
+  description: Y2Q Riskstands for "Years to Quantum" risk — the projected point in time when quantum computers become powerful enough to break the encryption systems that currently safeguard our digital world. Unlike classical computers, quantum machines can solve certain problems exponentially faster, including factoring large prime numbers, which threaten widely used cryptographic protocols like RSA and ECC (Elliptic Curve Cryptography).
+  description: The significance of Y2Q risk lies in its potential to cripple global cybersecurity. Most of today’s digital infrastructure—banking systems, government databases, internet communications, cloud platforms, and even defense operations—rely on encryption that quantum computers could eventually dismantle. Here’s why it demands immediate attention: Preparing for the Inevitable While Y2Q isn’t hereyet, estimates range from7 to 15 yearsbefore large-scale quantum computers emerge. That may sound like a distant future, but considering the time it takes to upgrade cryptographic infrastructure at scale,the clock is already ticking. Governments, enterprises, and cybersecurity leaders are now investing inquantum-safe cryptography—algorithms designed to resist attacks from quantum computers. This proactive shift is calledcrypto-agility, and it’s essential for resilience in a post-quantum world. Final Thought Y2Q risk is not science fiction—it's a real and growing threat. Just like Y2K forced a global software update,Y2Q demands a global encryption upgrade. The sooner organizations assess their cryptographic posture and begin transitioning toquantum-resistant technologies, the better prepared they will be for the quantum future.
+  features:
+    Harvest Now, Decrypt Later (HNDL):Adversaries can already capture encrypted data today and wait for quantum capabilities to decrypt it in the future. Sensitive data like state secrets, medical records, or trade secrets may still hold value even years down the line.
+    Long-Term Digital Assets at Risk:Data with long shelf life—patents, intellectual property, legal records—are especially vulnerable. Once quantum decryption becomes viable, historical data that was thought to be secure may be instantly compromised.
+    Zero-Day for Encryption:The day Y2Q arrives could act like a "zero-day event" for global encryption. Organizations not prepared with quantum-safe measures might face catastrophic breaches overnight.
+    Global Digital Trust at Stake:Encryption is the backbone of digital trust. A quantum attack could lead to financial fraud, misinformation spread, identity theft, and massive reputational damage, undermining confidence in digital ecosystems.
+    Enablevault, timer messages, remote wipe, and other modules based on department needs.
+  description: TheQuantum Apocalypseis a term used to describe a future scenario wherequantum computers become so powerfulthat they canbreak the encryption standardsthat currently secure the internet, banking systems, defense communications, and nearly every digital transaction we rely on today. It’s not science fiction—it’s a looming cybersecurity crisis that experts warn could arrive within the next10 to 15 years, or possibly sooner. The threat is serious enough that governments, defense agencies, and Fortune 500 companies are already taking preventive action.
+  description: Q-Dayrefers to the future date when a quantum computer becomes powerful enough tobreak current public-key encryption systemslike RSA, ECC (Elliptic Curve Cryptography), and DH (Diffie-Hellman). On this day, the digital security infrastructure that protects our internet, banking, government, healthcare, and defense communications could be rendered obsolete.
+  description: The word “apocalypse” isn’t just dramatic—it reflects thesweeping, global impactof such a quantum breakthrough:
+  features:
+    RSA and ECC Encryption Would Collapse:These are the encryption standards that protect everything from WhatsApp messages to government secrets. Quantum computers could crack them in hours or minutes.
+    Massive Data Breaches:Everything encrypted today could be decrypted later by quantum attackers—this is known as Harvest Now, Decrypt Later (HNDL). Sensitive health records, trade secrets, and classified documents stored securely today could be exposed tomorrow.
+    Digital Trust Breakdown: Trust in digital platforms would erode overnight. Financial fraud, identity theft, manipulation of communications, and national security breaches could become rampant.
+  description: The key culprit isShor’s Algorithm, a quantum algorithm that can factor large numbers exponentially faster than classical algorithms. This ability strikes at the heart of RSA and other public-key cryptosystems, which rely on the difficulty of factoring to remain secure. Once a sufficiently powerful quantum computer is built—often estimated at needing thousands of stable qubits—the doors open for this kind of catastrophic decryption.
+content_2:
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Hero Product Qc
+W Node 56466835 07D2 3403 3911 303758A6B0B2 Ee8006D7:
+  QConnect – Quantum Safe VPN & Secure Tunnel: QConnect – Quantum Safe VPN & Secure Tunnel Unhackable. Easy to Deploy & Integrate. Scalable.
+  description: Defend every data packet in motion with QConnect—India’s advanced TLS 1.3 postquantum VPN and secure tunnel system built for mission-critical applications, from defense to banking.
+  Button Wrapper:
+W Node 56466835 07D2 3403 3911 303758A6B0C0 Ee8006D7:
+
+## Qv Section W
+Why QConnect?: Why QConnect? Secure your enterprise against quantum threats with QConnect. This quantum-safe VPN uses advanced encryption (Crystals-Kyber 1024) to create future-proof, zero-trust tunnels, making it perfect for critical sectors likedefense, BFSI, government, telcos, PSUs, healthcare, and blockchain.
+Key Features:
+  heading: Key Features
+  W Layout Grid:
+    text: Quantum-Resistant Tunnel EstablishmentUses TLS 1.3 with post-quantum key exchange (Kyber 1024)Prevents both present and future quantum eavesdroppingDynamically creates AES-256-GCM keys when every session starts
+    text: Centralized Server & Client ManagementAdd/manage multiple server instances from a central dashboardProvision and authenticate clients automaticallyDistribute TLS certificates and configure securely post-auth
+    text: Adaptive Re-Keying & Encryption PoliciesDefinecustom re-keyingfrequenciesRotate encryption keys regularly to mitigate MITM riskAdmin-configurable cryptographicagility
+  W Layout Grid (2):
+    text: Secure Real-Time Monitoring & ControlReal-time server tunnel analytics via intuitive dashboardStatus logs for IPs, tunnel uptime, access historyStart/stop server tunnels with a click
+    text: Authenticated Encryption for All Data-in-MotionUsesAEAD (Authenticated Encryption with Associated Data)Protects data integrity during transitEnsures end-to-end confidentiality, even across hostile networks
+content_1:
+
+## Sec Cta
+heading: Act Before Your Data Is Exposed
+Cta Btn:
+
+## Qv Section W (2)
+How Does QConnect Work?: How Does QConnect Work?
+Process Relative Wrapper:
+  W Layout Grid:
+    description: Admin installs QConnect Server & authenticates via QShield Platform.
+    description: Clients are invited, verified, and configured securely.
+    description: UsingTLS 1.3 + Kyber 1024 + AES-256-GCM, encrypted tunnels are created.
+    description: Configurable re-keying, centralized logs, dynamic IP access manage ongoing traffic.
+    description: Admins monitor and control all secure tunnels from a real-time dashboard.
+content_1:
+
+## Section 1
+Tusted by defence, Critical sectors and Enterprises globally: Tusted by defence, Critical sectors and Enterprises globally
+Testimonial Slider 2:
+  content_1:
+    description: "For the BFSI sector, QConnect is no longer an option—it’s a mandate. It helped us establish quantum-secure, regulation-compliant communication with zero latency."
+    description: "We deployed QConnect to ensure encrypted communication across forward posts. Quantum-safe tech is now a necessity, not a luxury."
+    description: "Our Bitcoin cold wallets and ledger syncs are now 100% quantum-proof, thanks to QConnect. No other VPN offered PQC at this level."
+    description: "In healthcare, the stakes are lives. QConnect's authenticated encryption and key agility meet HIPAA and local compliance effortlessly."
+    description: "PSUs cannot depend on legacy encryption anymore. QConnect gives us local control, zero data sovereignty issues, and future-proof security."
+    description: "In automotive cloud platforms, latency and data integrity matter. QConnect keeps our OTA updates secure and future-ready."
+    description: "For nationwide telco backbone, QConnect replaced our legacy VPNs with quantum-resistant tunnels in weeks."
+
+## Qv Section 04
+Frequently asked questions: Frequently asked questions
+content_1:
+  description: A VPN using cryptographic algorithms that can resist both classical and quantum attacks—likeTLS 1.3 + Kyberfor key exchange.
+  description: Most legacy VPNs use RSA/ECC, which can be broken by quantum computers. QConnect is built onPQC (Post-Quantum Cryptography)standards approved by NIST.
+  description: Yes, it offersPQC tunnels, admin control, and faster key re-negotiation. It’s designed forhigh-trust, low-latency environments.
+  description: Absolutely. QConnect is compatible with cloud infra and edge deployments.
+  description: Yes. It can secure data-in-transit across APIs, edge devices, internal servers, and external SaaS.
+  description: QConnect is priced based on number ofsecured endpoints,bandwidth, andPQC rekeying frequency. Pricing includes bothclient licensesandserver provisioning. Options include pay-as-you-go tunnels or annual subscriptions for static IP VPNs with quantum-safe encryption. Volume discounts available for telcos, BFSI, and government workloads.
+  description: Core value: QConnect protects your people and teams from interception, data exfiltration, and improper access—even from internal or external adversaries. What’s at stake across sectors: QConnect ensures:
+  features:
+    Government, BFSI, Telco: The TeleMessage breach exposed metadata and message logs of over 60 US officialsReuters
+    Corporate & Legal:Slack, Discord, Microsoft services had major leaks of messages/files affecting millionstechepages.com
+    Telecom:MITM hacking of voice/text records (Salt Typhoon) shows encryption at rest/transit is vulnerablePeople
+    Cross-Platform Messaging:Push notification leaks via Firebase expose metadata/contentarxiv.org
+    Bluetooth/IoT:BLE/BT exploits like BLUR show local-device data theft risk even on trusted networksarxiv.org
+    Robust end-to-end encryption using lattice-based and hybrid quantum-safe KEMs.
+    Encryption at rest and in transit,preventing attacks across fiber, WiFi, 4G/5G, Bluetooth.
+    Metadata protection,bridging a serious blind spot on most messaging platforms.
+    Secure screen capture controls,access restriction, and audit logs to prevent internal threats.
+  description: TLS 1.3 is secure—for now. But its underlying key exchange (ECDHE) isn’t quantum-safe. QConnect enhances TLS 1.3 withCrystals-Kyberkey exchange +AES-256-GCMencryption,enabling quantum-resilient secure tunnelsfor: QConnect alsoencrypts at rest and during transit, protecting files whether stored in a data center, on a client laptop, or moving across WiFi, fiber, Bluetooth, or 5G.
+  features:
+    Sensitive data transfers (legal docs, supply chain invoices)
+    Remote desktops and applications (Citrix, SAP, DCIM)
+    Machine-to-machine communicationss in smart grids or SDNs
+  description: Becausedata-in-transitanddata-at-restare under daily threat: Even WiFi, BLE, and 4G basebands are prone toMITM attacks. QConnect makes sure thateven if a network is compromised, the data remains secure.
+  features:
+    BFSI: MOVEit and GoAnywhere hacks show even SFTP isn’t enough.Wikipedia
+    Legal: Client docs intercepted between laptops and cloud drives.
+    Telco: Salt Typhoon-style APTs compromise mobile signal tunnels.
+    Government: Secure emails routed through vulnerable TLS channels.
+  features:
+    In Transit: PQC-enhanced TLS 1.3 ensures that even if adversaries tap into a cable or intercept a packet, the keys can’t be reverse-engineered.
+    At Rest: Files remain encrypted using AES-256-GCM and are tied to dynamically generated session keys.
+    Against MITM: Servers and clients performmutual PQC-based authentication. No rogue client/server can tunnel in without verified cryptographic proof.
+  features:
+    Deploy theQShield™ Platform for provisioning and dashboard control.
+    Install QConnectClient and Servernodes.
+    Set upsecure tunnelswith Kyber-enabled keys.
+    Configure rekeying intervals, usage policies, and certificates.
+    Begin secure communications—whether M2M, endpoint, or cloud.
+content_2:
+
+## Section 2
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Cycle Header 03
+Column Large 18:
+  Armos - Quantum Key Distribution (QKD): Armos - Quantum Key Distribution (QKD) The ultimate shield for your data
+  Hero Newsletter Row:
+    content_1: QNu’s Armos QKD protects critical infrastructure unconditionally, providing quantum resilience to ensure data in transit is safe at all times.
+Hero Image Large:
+
+## Qv Section Bl
+What is Armos - Quantum Key Distribution (QKD)?: What is Armos - Quantum Key Distribution (QKD)? Armos - Quantum Key Distribution (QKD) is a state-of-the-art appliance which provides unconditional security for your critical data by leveraging the principles of quantum physics.
+Hero Image Large 2:
+content_1: Armos - Quantum Key Distribution (QKD) is a state-of-the-art appliance which provides unconditional security for your critical data by leveraging the principles of quantum physics.
+content_2:
+
+## Noda Feature 01
+Adopt Disruptive Technology Without Changing Your Infrastructure:
+  heading: Adopt Disruptive Technology Without Changing Your Infrastructure
+  description: Today’s complex network infrastructure has been built over time and each of the devices have a specific role to play. With such complexities being a reality, Armos quantum key distribution (QKD) can be deployed in any present cryptographic system.
+  text_1: The quantum layer sits on top of the existing network, making the deployment and adoption seamless - be it a data centre or a hybrid model.
+W Layout Grid:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66966a88b268bd16ec4e928d_icon-check.svg
+  image_alt: Quantum Computing Threatens Classical Infrastructure Security
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66966a88b268bd16ec4e928d_icon-check.svg
+  image_alt: Quantum Computing Threatens Classical Infrastructure Security
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66966a88b268bd16ec4e928d_icon-check.svg
+  image_alt: Quantum Computing Threatens Classical Infrastructure Security
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/66966a88b268bd16ec4e928d_icon-check.svg
+  image_alt: Quantum Computing Threatens Classical Infrastructure Security
+content_1:
+
+## Qv Section Bl (2)
+How Armos -Quantum Key Distribution (QKD) Works?:
+  heading: How Armos -Quantum Key Distribution (QKD) Works?
+  description: Quantum key distribution (QKD) uses quantum physics to securely distribute encryption keys. Armos (QKD) transmits keys using randomly generated photons over a fiber cable. These photons, in a quantum state, exchange quantum information to establish the same key at both ends.
+  text_1: QNu's Armos (QKD) delivers quantum keys that ensure unconditional security for two parties communicating securely, based on quantum physics. It detects eavesdroppers, providing secure symmetric key distribution for encrypting confidential data.
+  text_2: Any attempt to read photon information causes errors and collapses the keys, halting generation and alerting the admin. Key generation resumes when errors decrease. The key is never exchanged, making eavesdropping nearly impossible. The symmetric key remains a shared secret.
+Hero Image Large 2:
+content_1:
+
+## Section W 02
+How Armos - Quantum Key Distribution (QKD) achieves unconditional security?: How Armos - Quantum Key Distribution (QKD) achieves unconditional security? Armos QKD enables to create secure encryption keys for any two ends of a communication link for Symmetric Key Encryption system without ever sharing the actual keys on any links.
+W Layout Grid:
+  title: 5G Back Haul Using QKD Network
+  title: Quantum Safe Networks
+  title: Transition to Secure Digital Key Transfer
+  title: End-to-End Encryption
+content_1:
+
+## Cycle Cta 04
+Div Block 26227:
+Cta Heading: Are You An Organisation With Sensitive Data? Looking To Future Proof Your Data Today Using Quantum Cryptography?
+
+## Cycle Header 03 (2)
+title: Every entity that relies on computers and networks is vulnerable to Q-Day.
+
+## Qv Section 04
+Frequently asked questions: Frequently asked questions
+content_1:
+  description: Quantum cryptography is the wider field of applying quantum mechanical properties for cryptographic purposes. QKD is the most mature and widely deployed application, specifically focused on secure key distribution. While quantum cryptography encompasses various quantum-based security techniques, QKD remains the most commercially viable with 30+ QNu deployments globally.
+  description: QNu's Armos QKD system achieves 150-200 km point-to-point, significantly exceeding the industry standard of 80-100 km. To extend beyond these distances, organisations deploy trusted node networks. QNu's 500 km intercity network demonstrates this scalability with only 4 nodes vs 10 for competitors, achieving 60% infrastructure reduction.
+  description: QKD costs have reduced significantly. While initial hardware asset investment is higher than traditional encryption, the total cost of ownership is competitive considering long-term security value and QNu's 60% infrastructure reduction. For defence, government, and high-security applications shielding data with 20-30 year confidentiality requirements, QKD is cost-effective.
+  description: Yes, QKD works over standard single-mode optical fibre used in telecommunications networks. Organisations don't need to lay new fibre infrastructure. QNu's 500 km network was deployed over existing optical fibre infrastructure in Rajasthan, demonstrating seamless integration. This means if you have fibre between locations, you can likely deploy QKD without additional fibre investment.
+  description: If QKD detects eavesdropping (via abnormal quantum bit error rates), it instantly discards compromised bits and alerts security teams—no communication continues with a risky key. The system then generates a new secure key using fresh quantum states. Continuous monitoring enables real-time threat detection, making automatic intrusion detection QKD’s key advantage over traditional encryption. QNu’s systems also provide detailed logs and alerts, integrating with SOC and SIEM platforms for enterprise-wide visibility
+  description: QKD integrates with existing cryptographic infrastructure through standard key management interfaces. It generates quantum-secure symmetric keys for conventional encryption systems like AES or one-time pads, ensuring current applications and network equipment function as usual—just with stronger keys. QNu’s solutions support standard APIs such as KMIP and PKCS#11 for seamless integration with HSMs, encryption appliances, and key management systems. The quantum advantage lies in secure key distribution, not infrastructure replacement. Deployment involves installing QKD endpoints, connecting them via fiber, and configuring key management—typically completed within days to weeks depending on scale.
+  description: No, quantum computers cannot break QKD—its fundamental advantage. Unlike RSA/ECC, which rely on mathematical complexity quantum computers shatter via Shor's algorithm, QKD's security stems from quantum physics: the no-cloning theorem prevents state copying, and Heisenberg's uncertainty principle detects any measurement disturbance. These are unbreakable laws of nature, not computational puzzles. Quantum computers even enhance QKD via repeaters, making it the ultimate quantum threat defense.
+content_2:
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Cycle Header 03
+Column Large 18: Tropos - Quantum Random Number Generator (QRNG) Root of trust giving the perfect random numbers QNu' Tropos (QRNG) does not rely on mathematical algorithms; it generates random numbers from a quantum source, making it suitable for all applications.
+Hero Image Large 3:
+content_1:
+
+## Noda Content 02
+What is Tropos - Quantum RandomNumber Generator (QRNG)?: What is Tropos - Quantum RandomNumber Generator (QRNG)?
+description: Traditional random number generators likePRNGandTRNGare deterministic and reproducable if all the input variables are known. These random number generators being deterministic are entropy starved. Hence, making the entire system vulnerable.
+W Layout Grid:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694e521dbc652a825418f74_bug.svg
+  description: Indeterministic input driving unpredictability
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694ed2f16dfe9721755f4e7_eavesdropping.svg
+  description: Uniform distribution of bits in sequence
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694ed3eb4d2d4b8c771890b_rise-pose.svg
+  description: Lack of patterns in the sequence
+text_1: Tropos - quantum random number generator (QRNG) uses the principles of quantum mechanics to generate truly random nondeterministic numbers. By fact, quantum physics is fundamentally random in nature and is confirmed by theory and experimental research.
+text_2: Quantum Random Number Generator is a highly-sophisticated engineering innovation which involves the power of complex deep-tech technologies (such assemiconductors,optoelectronics,high precision electronicsandquantum physics) working together to create the highest level of randomness possible.
+
+## Noda Content 02 (2)
+Container Small 25:
+  How Tropos - Quantum RandomNumber Generator Works?: How Tropos - Quantum RandomNumber Generator Works?
+  description: A laser-based quantum source generates the randomness in Tropos - quantum random number generator (QRNG). To elaborate on the process, a laser produces a stream of the elementary particle, photon. The photons generated from the laser are used to generate the random numbers using the "Time-of-Arrival" of the single photons on the single photon detector.
+  Hero Image Large 3:
+  text_1: The following diagram depicts the process from photon generation to random number output. The process starts with the generation of light from a laser source, which is converted into single-photon level using variable optical attenuators. The photons are then sent onto aSPD (Single Photon Detector)where the detection time bin of the photon is recorded using external time reference.
+  text_2: The photon has a uniform probability of hitting any particular time bin. No one knows behorehand in which particular time bin the detection will happen even if all the parameters about the state preparation, state propagation, and detection are revealed. It is during the detection instant, photon collapses to one particular time bin.
+  text_3: The test suits check the randomness of the bits. Only if the conditions are met, they are forwarded to the applications or users requesting the random numbers. RESTful interface is the typical API used for the transfer of random numbers from Tropos to external applications or end users.
+content_1:
+
+## Cycle Cta 03
+Container Medium 34:
+  Demonstrating TrueRandomness: Demonstrating TrueRandomness Proof of Concept (PoC) on how QRNGs are Truly Random and their outcomes are 100% Unpredictable
+  Div Block 58:
+
+## Noda Content 02 (3)
+Ideal random key generator for highthroughput applications: Ideal random key generator for highthroughput applications
+description: Today's applications require a high rate of keys and randomness to ensure complete security. It could bekey vaults,gaming,IoT devices,AI/ML,block chains,simulations, in addition tocritical infrastructure.
+text_1: Tropos QRNG forms the source of these applications where the trust on randomness is paramount. With true entropy and high rate of generation, it fulfils today’s need for a perfect source.
+W Layout Grid:
+  description: Perfect Random Keys
+  description: High Rate of Entropy
+  description: High Throughput Key Rates
+  description: Multiple Application Usage
+
+## Noda Content 02 (4)
+Column 2X Large:
+  Why would you need Tropos - QuantumRandom Number Generator (QRNG)?: Why would you need Tropos - QuantumRandom Number Generator (QRNG)?
+  description: True Random numbers play an important role in data security to provide robust encryption. QRNG from QNu labs addresses different data rates and standard interfaces to cater to multiple applications.
+  W Layout Grid:
+    description: Random numbers are used as seed in cryptosystems to generate keys. The strength of these keys depends on randomness of the input seed.
+    description: Pseudorandom number generator (PRNG) is a typical software-based algorithm that generates data from a seed number and converts that into random values.
+    description: By using hardware inputs, TRNGs create random values. TRNG uses avalanche noise, thermal noise, and atmospheric noise as inputs.
+    description: PRNGs and TRNGs are predictable, making them vulnerable. QRNGs, leveraging quantum physics, generate true randomness and provide the best random keys.
+content_1:
+
+## Cycle Feature 04
+content_1:
+  Column Large 18: Every entity that relies on computers andnetworks is vulnerable to Q-Day.
+  description: Data is the most valuable asset for any organisation. Sensitive data has a shelf life exceeding 10 years, while critical data can be stored for over 25 years. This shows that today’s encryption still poses a risk in the coming years.
+  text_1: Transitioning to Post-Quantum Cryptography will help secure your data and reduce the risk of data theft now and in the future.
+W Layout Grid:
+  title: Data Centre
+  title: Healthcare
+  title: Automotive industry
+  title: Enterprise
+  title: Individuals
+
+## Qv Section 04
+Frequently asked questions: Frequently asked questions
+content_1:
+  description: The “Q” refers toQuantum. Quantum mechanics is inherently random, and aQuantum Random Number Generator (QRNG)is a subclass ofTrue Random Number Generator (TRNG)that extracts true randomness fromquantum processes, distinguishing it from classical physical randomness.
+  description: The optical QRNG,Tropos, is based on theTime of Arrival (ToA)principle. In this method, the arrival time of a single photon is divided into extremely small time bins (with ~5 ps precision). Since only one photon is detected per interval, the particular time bin in which it appears isintrinsically random— forming the source of true randomness.
+  description: Other quantum methods exist — such as photon path randomness using a beam splitter — but they can introduce bias and limit bit generation per event. TheToA approachoffers two key advantages: Low biasin bit generation. High efficiency,yielding multiple random bits (up to 16 per detection event), setting a benchmark for this method.
+  features:
+    Low biasin bit generation.
+    High efficiency,yielding multiple random bits (up to 16 per detection event), setting a benchmark for this method.
+  description: While photon generation and detection follow aPoisson distribution, this isnot the source of entropyin the ToA method. In the single-photon regime, the conditional probability of detecting a photon at a specific time bin isuniformly random. Hence, the quantum entropy arises intrinsically from photon behavior — not from statistical distributions seen in classical processes.
+  description: Each system component — including the photon source, detectors, and modulators — is carefully characterized and calibrated. Additionally,Hanbury Brown and Twiss (HBT)tests are performed to ensure the system operates in thesingle-photon regime, confirming its quantum nature.
+  description: Tropos-generated numbers successfully pass all standard statistical tests (NIST, ENT, Diehard, etc.) and are derived directly fromphoton quantum behavior— without relying on mathematical algorithms. This ensuresgenuine quantum randomness, low bias, and high bit yield per detection event.
+  description: Chip-based QRNG — the source of entropy is theradioactive decayofAmericium-241. The emittedalpha particlesduring decay generate true random numbers, providing a compact hardware-based quantum solution.
+content_2:
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Hero Product Sc
+W Node 4Cd4D4E3 4Af7 90A7 6Cf6 1229C45465F4 1933Adfb:
+  Quantum Safe End-to-End Drone Communication Platform: Quantum Safe End-to-End Drone Communication Platform Quantum-secured. Mission-Critical. Unbreakable.
+  description: The world’s first Made-in-India, quantum-resilient autonomous drone communication platform — safeguarding mission-critical data with next-gen cryptography, ultra-efficient energy design, and seamless integration across defense and industrial UAV fleets.
+  Button Wrapper:
+W Node 4Cd4D4E3 4Af7 90A7 6Cf6 1229C4546628 1933Adfb:
+
+## Qv Section W
+Why Quantum Safe End-to-End Drone Communication Platform?:
+  heading: Why Quantum Safe End-to-End Drone Communication Platform?
+  description: Built for Tomorrow’s Threats, Delivered Today
+  text_1: QNu Labs’ drone security solution is a world-first, entirely Indiandesigned and built, quantum communication platform forUnmanned Aerial Vehicles(UAVs). It integrates post-quantum encryption, hardware root-of-trust, and high-speed data protection in a compact, lightweight module ideal for any mission profile.
+W Layout Grid:
+  description: End to End Quantum-ready encryptionensures long-term protection for critical drone data
+  description: Meets global standards likeNIST PQC (FIPS 203) and FIPS 140-2for regulatory compliance
+  description: Built-in post-quantum encryption (CRYSTALS-Kyber)with flexible support for legacy systems
+  description: True quantum entropy via onboard QRNG (NIST 800-90B) leads to generation for trusted key creation, avoiding software risks
+  description: Secureover-the-air updateskeep your fleet protected as threats and standards evolve
+  description: Hardware root-of-trust ensures only verified firmware is used, reducing cybersecurity risk
+  description: Real-time tamper detectionprotects against physical and supply chain attacks
+  description: Fast, secure encryption supports live video, telemetry, and commandwithno performance lag
+  description: Low power design increases drone flight timewithout compromising on security
+content_1:
+
+## Qv Section Bl
+Key Features: Key Features
+Bento Grid Wrapper:
+  W Layout Grid:
+    text: Quantum-Resilient CryptographyMulti-layered crypto built on QNu’s PQC stackUses CRYSTALS-Kyber (1024-bit, NIST FIPS 203)Lattice-based, quantum-resistant encryptionSecures against Shor’s and Grover’s attacks
+    text: High-Performance Hardware SecurityTamper-resistant HSM with on-boardQRNG(>1 kbps, NIST SP 800-90B)Hardware-acceleratedKyber & AES-256-GCMSecure boot & attestationfor verified firmwareFIPS 140-3 Level 2 key storage compliant
+    text: Multi-Standard PQC ComplianceSupports OTA crypto updates for evolving standards and threatsRuns multiple NIST PQC algorithms (FIPS 203) with dynamic selectionIncludes rollback protection and NIST CAVP-validated primitives
+  W Layout Grid (2):
+    text: Ultra-Low Power, High-Efficiency DesignOperates at 3.3V, <800mA active, <50mA deep sleepAdaptive power scaling based on crypto workloadIsolated power domains for cryptographic and other functions
+    text: Modular, Protocol-Agnostic IntegrationInterfaces: SPI 3.0, I2C 2.1, UART, USB 2.0, GPIO, Secure JTAGSupports MAVLink v2, DDS, custom protocolsFirmware APIs in C/C++/Python, with RTOS & bare-metal supportEnables secure key provisioning and remote attestation
+    text: High-Speed Data Path EncryptionAchieves 1 Gbps AES-256-GCM with sub-ms latencyUses hardware-accelerated PQC for telemetry, video, and C2 linksSupports AEAD for combined encryption and integrity
+    text: Comprehensive Security MonitoringReal-time checks on crypto health, entropy, and tamper eventsEnables secure logging and remote attestationTelemetry export via secure channel for compliance/audit
+content_1:
+
+## Qv Section Dr
+Integration Content:
+  Powering Global Leaders in Mission-Critical Sectors: Powering Global Leaders in Mission-Critical Sectors We provide secure, compliant communication infrastructure for the world's most demanding industries—from Finance and Healthcare to Energy and Defense—with a proven presence in North America, Europe, the Middle East, and Asia.
+  Button Wrapper:
+
+## Qv Section W (2)
+How Does It Work?: How Does It Work? This solution combines most of the industry-based flight controllers with theQ-ORE Encryptorhardware module:
+Process Relative Wrapper:
+  W Layout Grid:
+    description: Industry Based Flight Controller:
+    description: Q-ORE Encryptor Module:
+content_1:
+
+## Qv Section Testi
+content_1: Flowbase Booster [Carousel Ticker]
+Container Regular 20:
+  content_1:
+    title: “For national defence, security can’t be compromised. QVerse gives our teams an encrypted communication system that’s tamper proof, audit friendly, and doesn’t rely on foreign platforms. Proud to use an Indian innovation.”
+    title: “We never knew there was a 100% Indian made…quantum secure messaging and collaboration SaaS platform that works perfectly on web and mobile. QNu Labs made it possible.”
+
+## Qv Section 04
+Frequently asked questions: Frequently asked questions
+content_1:
+  description: Pricing is based on a per-unit plus integration support model. Enterprise and volume discounts are available. ContactQNu Labsfor a custom quote.
+  description: Unlike others, this is quantum-secure, tamper-proof, and designed for secure telemetry and command even against nation-state threats — all Made in India.
+  description: Quantum threats are real. Regulatory pressure is rising globally. Early adoption means future-proofing missions and critical infrastructure.
+  description: JustRequest a Demoand our team will assist with evaluation units, documentation, and integration support.
+  description: It supports NIST-standard PQC, has built-in hardware acceleration, tamper protection, OTA crypto upgrades, and real-time telemetry security.
+  description: Yes, designed with NIST and FIPS standards to ensure global export and compliance, especially in US, EU, APAC, and Middle Eastern markets.
+  description: Quantum-safe drone communication uses post-quantum cryptographic algorithms (like CRYSTALS-Kyber and PQC certificates) to protect drone control and telemetry from both current and future quantum threats.
+  description: Yes—supports 100%NIST PQC (Crystal KYBER, FIPS 203), includeshardware QRNG,OTA crypto updates, androck-solid tamper protections. Plus, Q-ore encryptor module isAES-256-GCM compliant.
+  description: It is theworld’s first end-to-end quantum-secure drone communication platform, fully Made in India. It integrates NIST-standardized post-quantum cryptography (CRYSTALS-Kyber), AES-256, tamper detection, secure OTA updates, and real-time telemetry encryption—ensuring mission-critical UAVs are protected against both current and future threats.
+  features:
+    First in the worldwith end-to-end post-quantum security and hardware root-of-trust
+    CombinesCRYSTALS-Kyber,AES-256-GCM, on-board QRNG, and secure boot
+    Delivers1 Gbps line-rate encryptionwith ultra-low power design
+    Backed by India’sNational Quantum Missionand deployed in defense & critical sectors
+    Competes head-to-head and outperforms SSH, SealSQ, and SkySafe on crypto depth, integration, and sovereignty
+  description: SSH's PROACTIF offersquantum-safe certificate exchangefor drone-user communication in emergency services (EU). QNu’s platform, however, offersfull-stack encryption, includingkey generation (QRNG),tamper detection, OTA updates, andprotocol-agnostic deployment, making it ideal for defense, surveillance, industrial, and autonomous missions.Source:SSH + PROACTIF
+  description: SealSQ integrates PQC into secure elements for authentication. QNu Labs provides afull quantum security suite—from encryption and key generation to OTA crypto agility and telemetry encryption—making it themost comprehensive drone communication security platformglobally.Source:SealSQ PQC UAV News
+  description: No. SkySafe focuses ondetecting rogue drones,not encrypting drone communication. Their system lacks cryptographic capability and is primarilya counter-drone airspace management tool.QNu Labs focuses on securingauthorized drone communicationfrom quantum threats.
+  description: Yes. QNu’s platform is:
+  features:
+    NIST FIPS 203compliant (CRYSTALS-Kyber)
+    FIPS 140-3 Level 2key storage compliant
+    UsesNIST SP 800-90Bcompliant QRNG
+    Built for export compliance inUS, EU, Middle East, APAC
+  description: Ideal for:Defense UAVs & border patrol, Industrial drones for infrastructure inspection, Healthcare & emergency delivery drones, Autonomous UAVs for surveillance or BVLOS ops
+  description: WithAES-256-GCM-signed OTA crypto updates,QNu allows seamless upgrades to new algorithms as standards evolve, including rollback protection and secure audit trails.
+  description: Yes. It adheres to global PQC and crypto standards (NIST, FIPS), with localized and sovereign deployment options. QNu Labs supports defense export policies and global drone integrators.
+  features:
+    Indian Armed Forces: Deployed for border surveillance & BVLOS missions
+    Defence Research Labs: Integrated with prototypes for crypto agility & compliance
+    BFSI, Automobile giants, Telco giants in APAC, European MNC Banks, Defence organizations across the world, Fortune 500 healthcare firms
+content_2:
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Main Hero Container
+Container X Large 2:
+  heading: Quantum Key Distribution Network (QKDN)
+  content_1: Orchestrating Quantum-Safe Infrastructure at National Scale The global QKD market is projected to reach $2.58 billion by 2030, growing at 33.78% CAGR. With data breach costs averaging $10.22 million in the US and $4.44 million globally, organizations need scalable quantum-safe infrastructure—not isolated point-to-point links.
+  content_2:
+Video Card:
+  Row Small 2: Quantum Key Distribution Networks (QKDN) Explained
+
+## Qv Section Bl
+Why Quantum Key Distribution Network (QKDN)?: Why Quantum Key Distribution Network (QKDN)? Revolutionizing quantum-secure communication with centralized control, intelligent orchestration, and scalable infrastructure for governments and enterprises.
+W Layout Grid:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/690d9f63a699efddda24b86b_malware.svg
+  text: QKDN is India’s first software-defined quantum network orchestration platform designed for governments and enterprises. It offers centralized control, unmatched operational resilience, and national-scale quantum-safe communication to secure critical digital infrastructure.
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/690d9e6d54d5003d0f7309ca_algorithm.svg
+  text: Unlike traditional point-to-point QKD setups that demand separate hardware for every connection, QKDN orchestrates hundreds of nodes and controllers from one command center, enabling seamless management across physical, digital, hybrid, and free-space QKD systems.
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/690d9ff297dc7468b1f06515_server.svg
+  text: Its platform architecture delivers up to 50% cost savings compared to linear deployments. Centralized orchestration removes complexity, enhances scalability, and simplifies expansion as organizations grow their quantum-secure networks across multiple layers and geographies.
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/690d9dcac5d2f8daec51f534_structure.svg
+  text: Tested across 500 km of Indian Army operations with 99.5% uptime, QKDN integrates AI-driven fault recovery, intelligent automation, and ETSI-compliant standards to maintain a self-healing, sovereign, and future-ready quantum-secure network.
+Key Value Propositions: Key Value Propositions
+W Layout Grid (2):
+  text: Orchestrate Hundreds of Quantum Nodes from One Command Center
+  text: Support Every QKD Technology from One Platform
+  text: Automatically Heal Network Failures Before Anyone Even Notices
+  text: Reduce Infrastructure Costs by 50 Percent Through Intelligent Network Topology
+  text: Deploy with Defence-Grade Validation and Indian Sovereignty
+content_1:
+
+## Noda Feature 01
+For Industries That Cannot Afford Quantum Vulnerability: For Industries That Cannot Afford Quantum Vulnerability For industries vulnerable to quantum threats: Cloud-Native, Financial Services, Healthcare, Government, SaaS, Telecom, Energy sectors.
+Competitive Landscape: Competitive Landscape
+content_1:
+  content_1:
+    text: QNu Labs QKDN
+    text: Traditional Players
+  content_2:
+    text: Network ScaleHundreds of nodes, 100+ controllersLimited node management, metro-scale focus
+    text: Standards ComplianceFull ETSI GS QKD 014, 015, 018 + IETF NETCONF/YANGETSI GS QKD 014, partial SDN integration
+    text: QKD Format SupportPhysical + Digital + Hybrid + Free-SpacePrimarily physical QKD only
+    text: Distance Coverage500km deployed; 2,000km roadmap~120-150km standard
+    text: Orchestration IntelligenceAI/ML-powered, cost-based routing, predictive analyticsBasic management dashboard, manual configuration
+    text: Fault HandlingAutomated multi-level recovery, path re-routing, BITE/POSTHot-swappable components, manual intervention required
+    text: Integration FlexibilitySKIP protocol, VPN-compatible, SDN/NFV frameworksHot-swappVendor-specific integration, limited compatibility able components, manual intervention required
+    text: Topology SupportHub-and-spoke, ring, star, mesh with 3-tier hierarchyPoint-to-point, relay, ring, star
+    text: Deployment Validation33 systems, 500km operational networkEuropean/Asian metro deployments, limited scale
+    text: Cost Efficiency50% infrastructure cost reduction vs. linear topologyHigh CAPEX for hardware-intensive deployments
+    text: Indian SovereigntyFully indigenous, IITM-incubated, TEC certifiedForeign technology, export-controlled, complex licensing
+    text: Geographic CoverageIndia TEC 91000:2022, NQM-backed; global deploymentEuropean/Asian markets
+Sources:: Sources: NIST PQC:https://csrc.nist.gov/Projects/post-quantum-cryptographyClassical IKEv2:https://datatracker.ietf.org/doc/html/rfc7296
+content_2:
+
+## Qv Section Bl (2)
+Why Organisations, SMBs Need Quantum Today?: Why Organisations, SMBs Need Quantum Today? Urgent quantum readiness: Protect data from harvest-now-decrypt-later threats, meet NIST mandates, and leverage India and China’s quantum advancements for future security.
+Bento Grid D:
+  W Layout Grid:
+    text: HNDL Threat ActiveAdversaries collecting encrypted data for future quantum decryption; Q-Day anticipated by 2035.
+    text: Cyberattack Cost ExplosionAttacks doubled since COVID-19; costs projected to reach $10.5 trillion annually by 2025
+    text: NIST 2028 MandateFull PQC adoption required; enterprises need 3-5 years for cryptographic infrastructure migration
+  W Layout Grid (2):
+    text: China's Operational Lead12,000km quantum backbone connecting 16 cities demonstrates quantum-safe national networks are strategic imperatives
+    text: India's 500km Milestone -National Quantum Mission focused quantum_ projects position India at the forefront with validated defence-grade operational reality.
+content_1:
+
+## Qv Section W
+Why QKDN Leads: Why QKDN Leads Software-defined quantum orchestration at national scale - proven across 500km Indian Army deployment.
+Bento Grid Wrapper:
+  text: Software-Defined OrchestrationCentralized automation cuts deployment time and operational costs by 60%.
+  text: Multi-Format QKDSupports physical, digital, hybrid, and free-space QKD for vendor-agnostic, future-ready deployments.
+  text: Intelligent ResilienceAI-driven monitoring delivers 99.5% uptime, 30% less downtime, and autonomous threat response.
+  text: National-Scale Architecture500km hybrid network, 33 systems, validated at defense-grade for real-world deployments.
+  text: Hybrid Security StackIntegrated QKD, NIST PQC, and QRNG ensure crypto-agility, classical compatibility, and regulatory compliance.
+  text: Indigenous SovereigntyFully India-made, TEC-approved; no foreign or export dependencies.​
+content_1:
+
+## Qv Section Bl (3)
+QKDN: Enterprise Quantum Network Features: QKDN: Enterprise Quantum Network Features Enhancing enterprise quantum networks with centralized orchestration, multi-tenant management, AI-driven monitoring, and PQC-secured high-availability infrastructure for mission-critical key distribution.
+Bento Grid Wrapper:
+  W Layout Grid:
+    text: Network Management & OrchestrationCentralized SDN controller managing 100+ QKD network controllersMulti-tenancy with isolated virtual quantum networksQKD 018 and ETSI GS QKD 015 NETCONF/YANG Interface
+    text: Key Management & DistributionETSI GS QKD 014 REST API for application integrationSKIP protocol for VPN/IPsec compatibilityNokia 1830 SMS PSS Tamper-proof storage with intrusion detection
+    text: Monitoring & AnalyticsReal-time telemetry (QBER, SKR, temperature, link status)AI/ML predictive maintenance forecasting failures 30% fasterCustomizable dashboards and automated scheduled reporting
+  W Layout Grid (2):
+    text: Security & Access ControlMulti-factor authentication (MFA) with biometric verificationPQC-secured management links with TLS 1.3 encryptionPhysical and logical tamper detection triggering key deletion
+    text: Fault Tolerance & High AvailabilityActive-standby redundancy with <5 second failoverAutomated path re-routing with sub-second activation99.5% uptime SLA validated in operational deployment
+    text: Interoperability & IntegrationSimultaneous physical, digital, free-space QKD managementRouter/firewall integration (Cisco, Juniper, Palo Alto)Cloud platform APIs (AWS, Azure, Google Cloud)
+    text: Scalability SpecificationsHundreds of QKD nodes per deployment25+ applications per node; 1000+ key paths per network500km validated; 2,000km roadmap with quantum repeaters
+content_1:
+
+## Qv Section W (2)
+title: Architecture Layers
+title: 10-Step Operational Workflow
+
+## Section Large 5
+National-Scale Quantum Security Today: National-Scale Quantum Security Today
+content_1: Quantum-safe networking is essential now; QKDN offers secure, software-defined orchestration and proven 500km Indian Army network deployment for rapid strategic quantum security.
+Div Block 26225:
+
+## Qv Section 04
+Frequently asked questions: Frequently asked questions
+content_1:
+  description: Traditional QKD connects two nodes in isolated pairs requiring separate hardware and manual management. QKDN transforms this into network architecture where hundreds of nodes are orchestrated centrally with intelligent routing—analogous to moving from dial-up modems to internet. Source:ETSI GS QKD 018
+  description: Unlike consumer apps, QVerse offers enterprise-grade admin controls (remote wipe, DLP, audit), quantum-safeQNu Labs deployed QKDN over 500km using hub-and-spoke topology with trusted nodes. Commercial QKD links reach ~150km in fibre; trusted node architecture extends indefinitely. 2026 roadmap targets 2,000km with pre-quantum repeaters for India; satellite free-space enables intercontinental coverage. encryption, and India-based SaaS deployment with local and global compliance.
+  description: Yes. QKDN integrates routers, firewalls, VPNs via ETSI GS QKD 014 REST APIs and SKIP protocol. Operates alongside classical traffic without dedicated fibre (hybrid) or uses dark fibre for maximum performance. Compatible with Cisco, Juniper, Palo Alto, and major networking vendors.
+  description: QKDN uses quantum key distribution where eavesdropping attempts disturb quantum states per Heisenberg uncertainty principle—provably secure regardless of attacker's computational power, unlike mathematical encryption (RSA, ECC) vulnerable to Shor's algorithm. Layered with NIST-approved PQC for defense-in-depth. Source:NIST PQC
+  description: QKDN reduces infrastructure costs 50% vs. linear point-to-point topologies. While initial QKD hardware exceeds classical encryptors, 3-year ROI comes from: eliminating emergency cryptographic migration, regulatory compliance cost avoidance, breach prevention (average $4.44M-$10.22M), unified management reducing headcount.
+  description: Yes. Private clouBased on Indian Navy 500km experience: Planning/design (3-4 months), hardware procurement/installation (4-6 months), integration/testing (2-3 months), operational validation (1-2 months). Total: 10-15 months for national-scale; 4-6 months for metro deployments. QNu provides turnkey deployment services.d/on‑premises options are available, especially fordefence or regulated sectors.
+  description: ETSI GS QKD 002, 004, 008, 014, 015, 018; IETF RFC 6020/7950/6241 (NETCONF/YANG); India TEC 91000:2022 Type Approval; AIMSCS QRNG certification; Common Criteria GS QKD 016; ISO 27001; National Quantum Mission approved.
+  description: Multi-level recovery: Node failure (automated path re-routing <5 seconds), controller failure (active-standby automatic failover), link failure (predictive analytics detect degradation before total failure). Indian Army deployment maintains 99.5% uptime under real-world harsh conditions.
+  description: Secure inter-agency communications, classified data protection, military command networks across geographically distributed facilities.BFSI: Transaction network protection, trading platforms, inter-branch connectivity facing $5.9M average breach costs.Telecommunications: Quantum-safe backbone infrastructure, 5G/6G network protection, secure service provider offerings.Healthcare: Patient record protection, telemedicine security, hospital interconnects facing $7.42M average breach costs.Critical Infrastructure: SCADA protection, smart grid security, power distribution, oil & gas OT security across dispersed assets.
+content_2:
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Main Hero Container
+heading: DigitalKey Generation and Distribution
+content_1: Quantum-Grade Security Without Quantum Hardware Complexity Hardware QKD requires dedicated fiber with 200km distance barriers. Digital Key Generation and Distribution delivers quantum-safe keys globally over existing IP networks at a rate of 1,200 keys/hour.
+content_2:
+
+## Qv Section Bl
+Why Digital Key Generation and Distribution: Why Digital Key Generation and Distribution Digital Key Generation and Distribution: Software-defined, cloud-native quantum-safe key exchange for global, scalable, and cost-effective protection against future threats.
+W Layout Grid:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/690d9f63a699efddda24b86b_malware.svg
+  text: Digital Key Generation and Distribution is the world's first software-defined quantum-safe key exchange systempurpose-built for cloud-native enterprises.Prevents against harvest-now-decrypt-later (HNDL) attacks happening today and quantum computers emerging tomorrow.
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/690d9e6d54d5003d0f7309ca_algorithm.svg
+  text: Unlike hardware QKD bound by fiberand distance,Digital Key Generation and Distribution operates globally over your existing networks—AWS, Azure, hybrid cloud, or internet.
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/690d9ff297dc7468b1f06515_server.svg
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/690d9dcac5d2f8daec51f534_structure.svg
+Top 5 Reasons Why: Top 5 Reasons Why
+W Layout Grid (2):
+  text: Deploy Quantum Security in Hours, Not Months
+  text: Secure Data Across Any Network with Digital Key Generation and Distribution
+  text: Triple-Layer Defence Against Unknown Threats
+  text: Integrate Without Disrupting Operations
+  text: Adapt to Tomorrow's Standards Today
+content_1:
+
+## Noda Feature 01
+For Industries that Cannot Afford Single Points of Failure: For Industries that Cannot Afford Single Points of Failure For industries vulnerable to quantum threats: Cloud-Native, Financial Services, Healthcare, Government, SaaS, Telecom, Energy sectors.
+Competitive Landscape: Competitive Landscape
+content_1:
+  content_1:
+    text: Digital Key Generation and Distribution
+    text: Traditional Players
+  content_2:
+    text: InfrastructureStandard IP networks, cloud compatibleDedicated dark fiber (Hardware QKD) / Standard IP quantum vulnerable (Classical)
+    text: Hardware DependenciesSoftware-only (optionalQRNG module)Quantum Physics(Photonics) based equipment (Hardware QKD) / None (Classical)
+    text: DistanceUnlimited global reach100-200km fiber limits (Hardware QKD) / Unlimited quantum vulnerable (Classical)
+    text: DeploymentHours (software install)Months (fiber provisioning) (Hardware QKD) / Hours quantum vulnerable (Classical)
+    text: Capital Expenditure$10K-$50K per endpoint$200K-$500K per link (Hardware QKD) / <$5K quantum vulnerable (Classical)
+    text: Quantum ResistanceYes (QRNG + ML-KEM(FIPS 203) +HODOS)Yes (Hardware QKD) / No - Shor's vulnerable (Classical)
+    text: Key Generation1,200 keys/hour per instance0.2-0.8 kbps distance-dependent (Hardware QKD) / Millisecondsquantum-vulnerable (Classical)
+    text: Cloud CompatibilityNative AWS, Azure, GCPFiber-incompatible (Hardware QKD) / Native quantum vulnerable (Classical)
+    text: ScalabilityLinear horizontal scalingFiber-limited (Hardware QKD) / Linear quantum-vulnerable (Classical)
+    text: MaintenanceSoftware updates onlyOptical alignment, calibration (Hardware QKD) / Software quantum-vulnerable (Classical)
+    text: StandardsETSI QKD 014, NIST MLKEM, TLS 1.3ETSI physical layer (Hardware QKD) / IETF TLS 1.3 quantum vulnerable (Classical)
+    text: Post-Quantum CryptoNative ML-KEM(FIPS 203) + HODOSLimited PQC (Hardware QKD) / Implementation-dependent quantum-vulnerable (Classical)
+Sources:: Sources: NIST PQC:https://csrc.nist.gov/Projects/post-quantum-cryptographyClassical IKEv2:https://datatracker.ietf.org/doc/html/rfc7296
+content_2:
+
+## Qv Section Bl (2)
+The Quantum Threat Timeline: The Quantum Threat Timeline Safeguard National Infrastructure Against the Coming Quantum Threat with Proven, Scalable, and Future-Ready Security
+Bento Grid D:
+  W Layout Grid:
+    text: HNDL Attacks Active NowAdversaries stockpiling encrypted data today for future quantum decryption
+    text: NIST 2028 MandateFull PQC adoption required; enterprises need 3-5 years for migration
+    text: Cloud-First Reality 85%of enterprises adopt cloud-first but hardware QKD can't protect cloud workloads
+  W Layout Grid (2):
+    text: ROI Before Q-DayAverage breach costs $4.44M globally; proactive quantum-safe shows positive return now
+    text: Act Now vs. Emergency ResponseStarting today means 2028-2030 completion; waiting means 2031-2035exposure during quantum threat maturity
+content_1:
+
+## Qv Section W
+Why Digital Key Generation and Distribution Leads: Why Digital Key Generation and Distribution Leads Quantum-safe key exchange without the fiber dependency of hardware QKD or the quantumvulnerability of classical encryption.
+Bento Grid Wrapper:
+  text: Software-Defined OrchestrationDeploy on existing infrastructure in hours—bare metal,VMs, or cloud instances with Kubernetes support. Eliminate $50K-$200K/km fiber costs while accelerating protection from 6-12 months to days.
+  text: Unlimited Distance with Cloud-NativeGlobal reach over any IP network with no 100-200 km photon limits. Sub-30ms key retrieval latency across continents tested on AWS Singapore-US and Azure Global multi-region deployments.
+  text: Enterprise-Grade Cloud Power1,200 keys/hour with 10-28ms retrieval latency. Horizontal scaling for thousands of concurrent sessions. Meets real-time trading/payment SLAs with distance-independentconsistent performance.
+  text: Zero Infrastructure DisruptionETSI GS QKD 014 REST API and SKIP protocol enable drop in integration with VPNs, IPsec, TLS, KMS (AWS KMS, Azure Key Vault, HashiCorp Vault) without network redesign or application rewrites.
+  text: Cryptographic AgilitySoftware-upgradeable algorithms adapt faster than hardware refresh cycles. Support for multiple PQC primitives in parallel with configurable algorithm selection per application avoiding quantum hardware obsolescence.
+content_1:
+
+## Qv Section Bl (3)
+Digital Key Generation and Distribution: Enterprise Quantum Network Features: Digital Key Generation and Distribution: Enterprise Quantum Network Features Quantum-safe enterprise key distribution platform combining QRNG, post-quantum algorithms, and scalable integration for secure, standards-compliant data protection.
+Bento Grid Wrapper:
+  W Layout Grid:
+    text: Quantum Entropy FoundationQRNG hardware-based true randomness from quantum phenomenaContinuous NIST SP 800-90B entropy quality validationCR RAO AIMSCS certified quantum random number generation
+    text: Post-Quantum AlgorithmsML-KEM(FIPS 203) (CRYSTALS-Kyber) NIST-approved lattice-based KEMHODOS proprietary algorithm for defense-in-depthSoftware-configurable primitives adaptable to evolving NIST standards
+    text: Key Generation & Management3 seconds per 256-bit key; 1,200 keys/hour; linear horizontal scalingIn-memory encrypted storage; automated rotationSession tracking with complete audit trails
+    text: Network & Protocol SupportIPv4/IPv6 dual-stack; TLS 1.3 with PQC cipher suitesHTTPS RESTful APIs (ETSI GS QKD 014); SKIP protocol for VPNCloud-tested: AWS, Azure, private clouds
+    text: Performance & Scalability10-28ms key retrieval latency; 25+ apps per nodeHorizontal scaling with load balancingDistance-independent performance
+    text: Integration & InteroperabilityKMS integration: AWS KMS, Azure Key Vault, HashiCorp VaultToken-based (OAuth 2.0, JWT) and certificate-based (mutual TLS) authenticationSDKs: Python, Java, C++, Node.js
+  W Layout Grid (2):
+    text: Security & ComplianceTriple-layer: QRNG + ML-KEM(FIPS 203) + HODOS25+ applications per node; 1000+ key paths per network
+    text: Deployment ModelsOn-premises (bare metal/VMs); cloud-native (AWS EC2, Azure VMs, GCE)Hybrid; container (Docker/Kubernetes); managed service (Digital Key Generation and Distribution-as-a-Service)
+content_1:
+
+## Qv Section W (2)
+title: Architecture Layers
+title: 10-Step Operational Workflow
+
+## Section Large 5
+Quantum-Safe Infrastructure Starts Here: Quantum-Safe Infrastructure Starts Here
+content_1: Harvest-now-decrypt-later is real. Digital Key Generation and Distribution enables instant quantum-safe protection for cloud workloads and sensitive data—no need to wait for hardware QKD or infrastructure changes. Deploy quantum security at software speed.
+Div Block 26225:
+
+## Qv Section 04
+Frequently asked questions: Frequently asked questions
+content_1:
+  description: Hardware QKD transmits quantum states over dedicated fiber; Digital Key Generation and Distribution achieves quantum-safe distribution through software-defined methods (QRNG entropy + NIST ML-KEM (FIPS 203) + HODOS) operating over standard IP networks. Hardware excels in metro fiber; Digital Key Generation and Distribution excels globally over internet and cloud.
+  description: Yes. "Quantum-safe" meansresistance against quantum computer attacks. Digital Key Generation and Distribution achieves this through QRNG quantum entropy and NIST ML-KEM (FIPS 203) (proven resistant to Shor's algorithm). NIST explicitly endorses PQC algorithms like ML-KEM (FIPS 203) as quantum-resistant. Source:NIST PQC
+  description: No distance limitations—operates over any IP network including public internet, MPLS, SD-WAN, cloud interconnects. Tested AWS Singapore-to-US and Azure multi-region (10,000+ km) with consistent 1,200 keys/hour, 10-28ms latency.
+  description: Yes. Digital Key Generation and Distribution implements ETSI GS QKD 014 REST API ensuring compatibility with AWS KMS, Azure Key Vault, HashiCorp Vault, Thales CipherTrust, custom KMS. SKIP protocol enables VPN/IPsec integration without modifying encryption software.
+  description: System immediately alerts administrators. Digital Key Generation and Distribution can fall back to cryptographic-quality software PRNG (NIST SP 800-90A) maintaining operations while QRNG is serviced, but software PRNG lacks quantum randomness guarantees (clear warnings issued).
+  description: AWS (EC2, Singapore/US-East/Europe, VPC, KMS integration), Azure (VMs, Global regions, Virtual Networks, Key Vault), Google Cloud (Compute Engine), private clouds (OpenStack, VMware, Nutanix), hybrid (on-premises bridging), multi-cloud (unified across AWS+Azure+GCP), containers (Docker/Kubernetes).
+  description: Hardware QKD: $200K-$500K per link. Digital Key Generation and Distribution: $10K-$50K per endpoint. Organizations needing 10+ quantum-safe connections achieve 80-90% cost savings.5-year TCO: Digital Key Generation and Distribution typically 70-85% lower than equivalent hardware QKD coverage
+  description: NIST PQC (ML-KEM (FIPS 203) approved), ETSI GS QKD 014, TLS 1.3, FIPS 140 (in progress), ISO 27001, National Quantum Mission India approved. Compliance mapping provided for FedRAMP, HIPAA, PCI DSS, GDPR.
+  description: Yes—primary use case. HNDL attacks see adversaries stockpiling encrypted data today for future quantum decryption. Deployingd QKD immediately replaces quantum-vulnerable key exchange protecting newly-encrypted data from future quantum threats.
+  description: Cloud-Native Enterprises:Microservices security, API gateways, service mesh encryption, multi-region data sync across AWS/Azure/GCP.‍Financial Services:Transaction protection, trading platforms, payment processors, blockchain networks facing $5.9M average breach costs.‍Healthcare:EHR protection, telemedicine security, genomic research, pharma R&D facing $7.42M average breach costs.‍Government/Defense:Distributed office communications, contractor access, coalition partnerships, remote worker VPNs where dedicated fiber is impractical.‍SaaS Providers:Embeddingquantum-safe key exchange in products, encryption-as-a-service platforms, MSSP differentiation.
+content_2:
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory
+
+
+## Style Banner
+description: Our products Armos(QKD) and Tropos(QRNG) are now on GeM's portal
+W Layout Blockcontainer:
+
+## Product Page Hero Copy
+Hodos - Post Quantum Cryptography (PQC):
+  heading: Hodos - Post Quantum Cryptography (PQC)
+  content_1: PQC, the Future-Proof Public Key Cryptography
+  Hero Homepage P Copy: QNu’s Hodos (PQC) is a quantum resilient public key cryptography based software that has been shown to be a hard problem for large scale quantum computers to solve.
+  content_2:
+Video Block B: Hodos - Post Quantum Cryptography (PQC)
+
+## Section
+What is Hodos - Post QuantumCryptography (PQC)?:
+  heading: What is Hodos - Post QuantumCryptography (PQC)?
+  description: Hodos is post quantum cryptography (PQC) algorithm developed by QNu labs withNIST PQC studiesas reference. Hodos (PQC) is the next generation of protocol which will help replace todays RSA based systems with a improved quantum resistant transport layer. Hodos (PQC) is based on NIST selected mathematical functions, which are far harder to backtrack as compared to the prime factorization and elliptic curve functions on which the current PKI is based on.
+  text_1: NIST has been working on the algorithms since 2014, and after the third round of evaluation in July 2020, it narrowed the selection down to seven finalists and eight alternate algorithms. QNu found lattice-based algorithms to be the best from the lot, and was selected for Hodos (PQC). Depending on NIST’s updates, the algorithms might be changed accordingly in the future without affecting operations.
+  content_2:
+Achieving Cryptoagility with Hodos - PostQuantum Cryptography:
+  heading: Achieving Cryptoagility with Hodos - PostQuantum Cryptography
+  description: Rapid digital transformation is heightening security risks and making systems prone to vulnerabilities. Cryptosystems should be agile and move at the same speed as digital adoption.
+  text_1: PKI is highly adopted because of its ease of usage. Integration is a challenge when changing cryptosystems, hence gaps must be avoided. Hodos (PQC) uses NIST standards for easy integration with current and future systems.
+  text_2: It is easy to use and simpler to integrate when compared to PKI. Hodos (PQC) is platform-independent and can be integrated into present servers, mobile devices, FPGA, PCIe-cards and more. QNu has ported the algorithms to FPGAs for additional speed-up and enhanced performance.
+What is Hodos - Post QuantumCryptography (PQC)? (2):
+  heading: What is Hodos - Post QuantumCryptography (PQC)?
+  W Layout Grid:
+    title: Higher Complexity to Break
+    image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694e521dbc652a825418f74_bug.svg
+    description: The complexity of lattice-based algorithms used for Hodos (PQC) is many times greater than the present PKI systems. This complexity generates keys that are quantum resistant.
+    title: Getting Quantum Ready
+    image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694e521dbc652a825418f74_bug.svg
+    description: Hodos (PQC) allows for quick quantum-resistant encryption of existing crypto infrastructure following NIST guidelines without the need for costly replacements.
+    title: Last-Mile Delivery
+    image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694e521dbc652a825418f74_bug.svg
+    description: Hodos (PQC) as a library, communication can be secured from the application level up. Thus, security is delivered till the last mile and can be connected to multiple devices without any complex installations.​
+    title: Easy Scalability
+    image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694e521dbc652a825418f74_bug.svg
+    description: Hodos (PQC) can be easily integrated into other QNu solutions. This scales up the solution and security capability, thereby addressing a wide range of implementations.
+  content_1:
+
+## Section (2)
+How Hodos - Post Quantum Cryptography Works:
+  heading: How Hodos - Post Quantum Cryptography Works
+  description: Hodos (PQC) works like the present PKI. The ease of use and implementation issimple, which makes the switch seamless.
+  text_1: Hodos (PQC) can work in hybrid withArmos (QKD),Tropos (QRNG)and‍Qosmos (EaaS), providing 360-degree security-making it quantum-safe,not just resistant.​
+Div Grid:
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694e521dbc652a825418f74_bug.svg
+  description: Agile Cryptography and Seamless Integration with Existing Standards
+  image: https://cdn.prod.website-files.com/660f833875f3ae90553f1584/6694e521dbc652a825418f74_bug.svg
+  description: Functionality Does Not Require Any Additional Hardware Devices
+
+## Section (3)
+Are you an organisation with sensitive data?Looking to Future Proof your Data today?: Are you an organisation with sensitive data?Looking to Future Proof your Data today? Would you like to see Hodos - Post Quantum Cryptography (PQC) in action?We would love to hear from you!
+Div Block 58:
+
+## Section Layout Dr
+Every entity that relies on computers andnetworks is vulnerable to Q-Day.:
+  heading: Every entity that relies on computers andnetworks is vulnerable to Q-Day.
+  Label Container: Industries
+  description: Data is the most valuable asset for any organisation. Sensitive data has a shelf life exceeding 10 years, while critical data can be stored for over 25 years. This shows that today’s encryption still poses a risk in the coming years.
+  text_1: Transitioning to Post-Quantum Cryptography will help secure your data and reduce the risk of data theft now and in the future.
+W Layout Grid:
+  title: Data Centre
+  title: Healthcare
+  title: Automotive industry
+  title: Enterprise
+  title: Individuals
+description: For industry specific cases studies.Contact Us
+
+## Section 1
+Footer Cta Div:
+  Are You Ready to Witness the Future of Data Security?: Are You Ready to Witness the Future of Data Security?
+  Div Block 148:
+Container Large 11:
+  W Layout Grid: Platform QShield™ Platform QConnect Secure File Sharing Service QVerse - Quantum Safe Messaging Entropy as a Service Products Armos (QKD) Tropos (QRNG) Hodos (PQC) Q-ORE Industries Banking & Finance Telecom Government & Defence Automotive Academy Resources Blog Guides Whitepapers Video & Webcast Case Studies Research Newsroom Glossary Company About Us Patents Awards Careers We're Hiring! Partners Contact Us
+  content_1: ©2026 QuNu Labs Private Limited, All Rights Reserved. Privacy and Policy Terms and Conditions Disclaimer Public Advisory

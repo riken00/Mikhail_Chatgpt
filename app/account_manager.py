@@ -54,6 +54,7 @@ class AccountManager:
 
     def acquire(self, timeout: float = 3600.0) -> user_details:
         deadline = time.time() + timeout
+        breakpoint()
         while time.time() < deadline:
             account = self._pick_account()
             if account:

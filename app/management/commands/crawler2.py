@@ -1,0 +1,314 @@
+from django.core.management.base import BaseCommand, CommandError
+from LLM.desc import CallLLM
+from crawlerlib.crawler import CrawlConfig, Crawler
+from logger import CustomLogger
+from urllib.parse import urlparse
+from pymongo import MongoClient
+from django.utils import timezone
+import os
+
+logger = CustomLogger(log_folder="logs/crawler2")
+
+MISSING_DESCRIPTION_FILTER = {
+    "$and": [
+        {
+            "$or": [
+                {"summary.details.description": {"$exists": False}},
+                {"summary.details.description": ""},
+                {"$expr": {"$lt": [{"$strLenCP": {"$ifNull": ["$summary.details.description", ""]}}, 200]}}
+            ]
+        },
+        {
+            "summary.about.website": {"$exists": True, "$ne": ""}
+        },
+        {
+            "$or": [
+                {"financial.funding_round.number_of_funding_rounds": {"$exists": True, "$ne": ""}},
+                {"financial.funding_round.total_funding_amount": {"$exists": True, "$ne": ""}},
+                {"financial.investors.number_of_investors": {"$exists": True, "$ne": ""}},
+                {"financial.funding_round.table": {"$exists": True, "$ne": {}}},
+            ]
+        },
+        {
+            "runner_info.description_script": {"$exists": False}
+        }
+    ]
+}
+
+def _normalize_website(raw: str) -> str:
+    if not raw:
+        return ""
+    raw = raw.strip().rstrip("/")
+    if not raw.startswith(("http://", "https://")):
+        raw = "https://" + raw
+    try:
+        parsed = urlparse(raw)
+        if parsed.netloc:
+            return raw
+    except Exception:
+        pass
+    return ""
+
+
+class Command(BaseCommand):
+    help = """
+        Auto-fetch companies missing descriptions from MongoDB, crawl their websites, generate descriptions via LLM, and save back to MongoDB.
+        
+        # Default — Big LLM (120B), batch 10, depth 1, pages 3
+        python manage.py crawler2
+
+        # Custom batch size
+        python manage.py crawler2 --batch-size 50
+
+        # Custom crawl depth and pages
+        python manage.py crawler2 --max-depth 2 --max-pages 5
+
+        # Use small LLM (8B)
+        python manage.py crawler2 --small-llm
+
+        # Full custom run with big LLM
+        python manage.py crawler2 --batch-size 20 --max-depth 2 --max-pages 5
+
+        # Full custom run with small LLM
+        python manage.py crawler2 --small-llm --batch-size 20 --max-depth 2 --max-pages 5
+    """
+
+    def add_arguments(self, parser):
+        parser.add_argument("--batch-size", type=int, default=10, help="Number of companies to process per run (default: 10).")
+        parser.add_argument("--max-depth", type=int, default=1, help="Crawl depth (0=homepage only, 1=follow links).")
+        parser.add_argument("--max-pages", type=int, default=3, help="Max pages to crawl per company.")
+        parser.add_argument("--small-llm", action="store_true", default=False, help="Use small LLM (8B). Default is 120B.")
+        parser.add_argument("--no-small-llm", dest="small_llm", action="store_false")
+
+    def handle(self, *args, **options):
+        self.llm = CallLLM(small_llm=options["small_llm"])
+        self.collection = self._get_collection()
+
+        batch_size = options["batch_size"]
+        max_depth  = options["max_depth"]
+        max_pages  = options["max_pages"]
+
+        companies = list(self.collection.find(MISSING_DESCRIPTION_FILTER).limit(batch_size))
+
+        if not companies:
+            self.stdout.write(self.style.WARNING("No companies found matching the filter."))
+            return
+
+        self.stdout.write(self.style.MIGRATE_HEADING(f"\nFound {len(companies)} companies — processing…\n"))
+
+        ok_count   = 0
+        fail_count = 0
+
+        for idx, doc in enumerate(companies, start=1):
+            company_name = doc.get("organization_name", "Unknown")
+            raw_website  = doc.get("summary", {}).get("about", {}).get("website", "")
+            company_url  = _normalize_website(raw_website)
+
+            self.stdout.write(f"\n[{idx}/{len(companies)}] {company_name} — {company_url}")
+
+            if not company_url:
+                self.stdout.write(self.style.WARNING("No valid website — skipping."))
+                fail_count += 1
+                continue
+
+            try:
+                description = self._run_pipeline(doc, company_url, max_depth, max_pages)
+                if description:
+                    ok_count += 1
+                else:
+                    fail_count += 1
+            except Exception as exc:
+                logger.error(f"Failed for {company_url}: {exc}")
+                self.stdout.write(self.style.ERROR(f"Error: {exc}"))
+                fail_count += 1
+
+        self.stdout.write(self.style.SUCCESS(f"\nDone — {ok_count} succeeded, {fail_count} failed out of {len(companies)}."))
+
+    def _run_pipeline(self, doc: dict, company_url: str, max_depth: int, max_pages: int) -> str | None:
+        crawled_text    = self._crawl_website(company_url, max_depth=max_depth, max_pages=max_pages)
+        company_context = self._build_company_context(doc)
+
+        # If crawl failed and no DB context either — mark as crawl_failed and skip
+        if not crawled_text.strip() and not company_context.strip():
+            self.stdout.write(self.style.WARNING(f"  ⚠️  Nothing extracted — marking crawl_failed."))
+            self.collection.update_one(
+                {"_id": doc["_id"]},
+                {"$set": {
+                    "runner_info.description_script":        "crawl_failed",
+                    "runner_info.description_script_url":    company_url,
+                    "runner_info.description_script_reason": "no_content_crawled",
+                    "runner_info.description_script_at":     timezone.now().isoformat(),
+                }}
+            )
+            return None
+
+        # Crawl returned nothing but DB context exists — mark partial and still skip LLM
+        if not crawled_text.strip():
+            self.stdout.write(self.style.WARNING(f"  ⚠️  Crawl returned no data — marking crawl_empty, skipping LLM."))
+            self.collection.update_one(
+                {"_id": doc["_id"]},
+                {"$set": {
+                    "runner_info.description_script":        "crawl_empty",
+                    "runner_info.description_script_url":    company_url,
+                    "runner_info.description_script_reason": "crawler_returned_no_pages",
+                    "runner_info.description_script_at":     timezone.now().isoformat(),
+                }}
+            )
+            return None
+
+        self.stdout.write(f"  📄 Crawled {len(crawled_text)} chars.")
+        full_context = self._merge_context(company_context, crawled_text)
+        description  = self.llm.get_description(full_context)
+
+        if not description or not description.strip():
+            self.stdout.write(self.style.WARNING("  ⚠️  LLM returned empty description — marking llm_failed."))
+            self.collection.update_one(
+                {"_id": doc["_id"]},
+                {"$set": {
+                    "runner_info.description_script":        "llm_failed",
+                    "runner_info.description_script_url":    company_url,
+                    "runner_info.description_script_reason": "llm_returned_empty",
+                    "runner_info.description_script_at":     timezone.now().isoformat(),
+                }}
+            )
+            return None
+
+        self.stdout.write(f"  📝 {description[:160]}…")
+
+        self.collection.update_one(
+            {"_id": doc["_id"]},
+            {"$set": {
+                "summary.details.description":           description,
+                "runner_info.description_script":        "done",
+                "runner_info.description_script_url":    company_url,
+                "runner_info.description_script_at":     timezone.now().isoformat(),
+            }}
+        )
+        self.stdout.write(self.style.SUCCESS(f"  ✅ Saved (id={doc['_id']})"))
+        return description
+
+    def _get_collection(self):
+        mongo_uri = os.getenv("MONGO_URI")
+        if not mongo_uri:
+            raise CommandError("MONGO_URI is not set in .env")
+        db_name  = os.getenv("STARTUPSCRAPERDATA_DB", "STARTUPSCRAPERDATA")
+        col_name = os.getenv("STARTUPSCRAPERDATA_DB_COLLECTION", "CorrectData")
+        self._mongo_client = MongoClient(mongo_uri)
+        return self._mongo_client[db_name][col_name]
+
+    def _crawl_website(self, url: str, max_depth: int = 1, max_pages: int = 3) -> str:
+        config = CrawlConfig(
+            max_depth=max_depth,
+            max_pages=max_pages,
+            delay=1.5,
+            same_domain_only=True,
+            respect_robots=True,
+            page_intents=["about", "product", "services", "mission"],
+        )
+        try:
+            logger.info(f"Crawling {url} (depth={max_depth})")
+            with Crawler(url, config=config) as crawler:
+                pages = crawler.crawl()
+        except Exception as exc:
+            logger.error(f"crawlerlib failed for {url}: {exc}")
+            return ""
+
+        if not pages:
+            return ""
+
+        chunks = []
+        for page in pages:
+            if isinstance(page, str):
+                # crawlerlib returned raw strings
+                if page.strip():
+                    chunks.append(page.strip()[:2000])
+            elif isinstance(page, dict):
+                structured = page.get("structured_content", {})
+                if structured:
+                    chunk = self._structured_to_text(structured)
+                    if chunk.strip():
+                        chunks.append(chunk)
+                else:
+                    flat = page.get("text_content", "").strip()
+                    if flat:
+                        chunks.append(flat[:2000])
+
+        return "\n\n".join(chunks)
+
+    def _build_company_context(self, doc: dict) -> str:
+        lines = []
+        name = doc.get("organization_name", "")
+        if name:
+            lines.append(f"Company: {name}")
+
+        details = doc.get("summary", {}).get("details", {})
+        about   = doc.get("summary", {}).get("about", {})
+
+        if details.get("industries"):
+            lines.append(f"Industries: {details['industries']}")
+        if details.get("founded_date") or details.get("founded_year"):
+            lines.append(f"Founded: {details.get('founded_date') or details.get('founded_year')}")
+        location = about.get("location", {})
+        if isinstance(location, dict) and location.get("country"):
+            location_str = ", ".join(filter(None, [location.get("city"), location.get("state"), location.get("country")]))
+            lines.append(f"Headquarters: {location_str}")
+        elif isinstance(location, str) and location.strip():
+            lines.append(f"Headquarters: {location.strip()}")
+
+        if about.get("no_of_employees"):
+            lines.append(f"Employees: {about['no_of_employees']}")
+        if details.get("company_type"):
+            lines.append(f"Type: {details['company_type']}")
+        if details.get("founders"):
+            lines.append(f"Founders: {details['founders']}")
+        if about.get("last_funding_type"):
+            lines.append(f"Last funding type: {about['last_funding_type']}")
+
+        funding = doc.get("financial", {}).get("funding_round", {})
+        if funding.get("total_funding_amount"):
+            lines.append(f"Total funding: {funding['total_funding_amount']}")
+        if funding.get("number_of_funding_rounds"):
+            lines.append(f"Funding rounds: {funding['number_of_funding_rounds']}")
+
+        parent_industries = doc.get("parentIndustry", [])
+        if parent_industries:
+            lines.append(f"Parent industries: {', '.join(parent_industries)}")
+
+        return "\n".join(lines)
+
+    def _merge_context(self, company_context: str, crawled_text: str) -> str:
+        combined = ""
+        if company_context.strip():
+            combined += "=== Company Information (from database) ===\n" + company_context.strip()
+        if crawled_text.strip():
+            if combined:
+                combined += "\n\n"
+            combined += "=== Website Content (crawled) ===\n" + crawled_text.strip()
+        return combined[:5000]
+
+    def _structured_to_text(self, structured: dict) -> str:
+        parts = []
+
+        def _flatten(value, indent=0):
+            pad = "  " * indent
+            if isinstance(value, str):
+                if value.strip():
+                    parts.append(f"{pad}{value.strip()}")
+            elif isinstance(value, list):
+                for item in value:
+                    _flatten(item, indent)
+            elif isinstance(value, dict):
+                for k, v in value.items():
+                    if k in ("images", "cta", "links", "price"):
+                        continue
+                    if isinstance(v, str) and v.strip():
+                        parts.append(f"{pad}{k}: {v.strip()}")
+                    else:
+                        parts.append(f"{pad}{k}:")
+                        _flatten(v, indent + 1)
+
+        for section_title, section_content in structured.items():
+            parts.append(f"\n## {section_title}")
+            _flatten(section_content)
+
+        return "\n".join(parts)

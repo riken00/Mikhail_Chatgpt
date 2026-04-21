@@ -71,7 +71,7 @@ class Bot:
         options.add_argument(f"--profile-directory={profile_name}")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-        # options.add_argument("--headless=True")
+        options.add_argument("--headless")
         
 
         self.driver = uc.Chrome(options=options, version_main=145)
@@ -134,6 +134,8 @@ class Bot:
         time.sleep(secs)
 
     def _is_logged_in(self) -> bool:
+        self.driver.save_screenshot("debug_login_check.png")
+        self.driver.refresh()
         self.random_sleep()
         script = self.find_element(
             "client-script", '//script[@id="client-bootstrap"]', timeout=5
@@ -149,6 +151,7 @@ class Bot:
         if not self.driver:
             self.get_driver()
 
+        breakpoint()
         self.driver.get(self.CHATGPT_URL)
         if self._is_logged_in():
             if close_driver:
