@@ -5,7 +5,7 @@ from logger import CustomLogger
 from urllib.parse import urlparse
 from pymongo import MongoClient
 from django.utils import timezone
-import os
+import os, time
 
 logger = CustomLogger(log_folder="logs/crawler2")
 
@@ -88,41 +88,43 @@ class Command(BaseCommand):
         max_depth  = options["max_depth"]
         max_pages  = options["max_pages"]
 
-        companies = list(self.collection.find(MISSING_DESCRIPTION_FILTER).limit(batch_size))
+        while True:
+            companies = list(self.collection.find(MISSING_DESCRIPTION_FILTER).limit(batch_size))
 
-        if not companies:
-            self.stdout.write(self.style.WARNING("No companies found matching the filter."))
-            return
-
-        self.stdout.write(self.style.MIGRATE_HEADING(f"\nFound {len(companies)} companies — processing…\n"))
-
-        ok_count   = 0
-        fail_count = 0
-
-        for idx, doc in enumerate(companies, start=1):
-            company_name = doc.get("organization_name", "Unknown")
-            raw_website  = doc.get("summary", {}).get("about", {}).get("website", "")
-            company_url  = _normalize_website(raw_website)
-
-            self.stdout.write(f"\n[{idx}/{len(companies)}] {company_name} — {company_url}")
-
-            if not company_url:
-                self.stdout.write(self.style.WARNING("No valid website — skipping."))
-                fail_count += 1
+            if not companies:
+                self.stdout.write(self.style.WARNING("No companies found — sleeping 60s..."))
+                time.sleep(60)
                 continue
 
-            try:
-                description = self._run_pipeline(doc, company_url, max_depth, max_pages)
-                if description:
-                    ok_count += 1
-                else:
-                    fail_count += 1
-            except Exception as exc:
-                logger.error(f"Failed for {company_url}: {exc}")
-                self.stdout.write(self.style.ERROR(f"Error: {exc}"))
-                fail_count += 1
+            self.stdout.write(self.style.MIGRATE_HEADING(f"\nFound {len(companies)} companies — processing…\n"))
 
-        self.stdout.write(self.style.SUCCESS(f"\nDone — {ok_count} succeeded, {fail_count} failed out of {len(companies)}."))
+            ok_count   = 0
+            fail_count = 0
+
+            for idx, doc in enumerate(companies, start=1):
+                company_name = doc.get("organization_name", "Unknown")
+                raw_website  = doc.get("summary", {}).get("about", {}).get("website", "")
+                company_url  = _normalize_website(raw_website)
+
+                self.stdout.write(f"\n[{idx}/{len(companies)}] {company_name} — {company_url}")
+
+                if not company_url:
+                    self.stdout.write(self.style.WARNING("No valid website — skipping."))
+                    fail_count += 1
+                    continue
+
+                try:
+                    description = self._run_pipeline(doc, company_url, max_depth, max_pages)
+                    if description:
+                        ok_count += 1
+                    else:
+                        fail_count += 1
+                except Exception as exc:
+                    logger.error(f"Failed for {company_url}: {exc}")
+                    self.stdout.write(self.style.ERROR(f"Error: {exc}"))
+                    fail_count += 1
+
+            self.stdout.write(self.style.SUCCESS(f"\nBatch done — {ok_count} succeeded, {fail_count} failed. Continuing…\n"))
 
     def _run_pipeline(self, doc: dict, company_url: str, max_depth: int, max_pages: int) -> str | None:
         crawled_text    = self._crawl_website(company_url, max_depth=max_depth, max_pages=max_pages)
