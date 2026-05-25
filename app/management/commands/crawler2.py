@@ -146,7 +146,7 @@ class Command(BaseCommand):
         parser.add_argument(
             "--threads",
             type=int,
-            default=10,
+            default=30,
             help="Number of parallel threads (default: 10).",
         )
 
