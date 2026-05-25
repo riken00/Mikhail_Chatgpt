@@ -409,6 +409,7 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS("All threads done."))
 
     def _run_pipeline( self, doc: dict, company_url: str, max_depth: int, max_pages: int ) -> str | None:
+        company_name = doc.get("organization_name", "Unknown")
         
         crawled_text = self._crawl_website(
             company_url, max_depth=max_depth, max_pages=max_pages
@@ -438,7 +439,7 @@ class Command(BaseCommand):
         if not crawled_text.strip():
             self.stdout.write(
                 self.style.WARNING(
-                    f"  ⚠️  Crawl returned no data — marking crawl_empty, skipping LLM."
+                    f"  ⚠️  Crawl returned no data | {company_name} — marking crawl_empty, skipping LLM."
                 )
             )
             self.collection.update_one(
@@ -453,22 +454,40 @@ class Command(BaseCommand):
                 },
             )
             return None
+        
+        if len(crawled_text.strip()) < 2000:
+            logger.warning(f"Pipeline | '{company_name}' | crawl returned very little text ({len(crawled_text.strip())} chars) — marking crawl_insufficient.")
+            self.collection.update_one(
+                {"_id": doc["_id"]},
+                {"$set": {
+                    "runner_info.description_script":        "crawl_insufficient",
+                    "runner_info.description_script_url":    company_url,
+                    "runner_info.description_script_reason": "crawler_returned_insufficient_text",
+                    "runner_info.description_script_at":     timezone.now().isoformat(),
+                }}
+            )
+            return None
 
         self.stdout.write(f"  📄 Crawled {len(crawled_text)} chars.")
         full_context = self._merge_context(company_context, crawled_text)
         description = self.llm.get_description(full_context)
 
-        if not description or not description.strip():
+        if not description or not description.strip() or len(description.strip()) < 200:
+            failed_status = "llm_failed"
+            if len(description.strip()) < 200 and len(description.strip()) > 0:
+                failed_status = "llm_short"
+                logger.warning(f"Pipeline | '{company_name}' | LLM returned short description ({len(description.strip())} chars).")
+                
             self.stdout.write(
                 self.style.WARNING(
-                    "  ⚠️  LLM returned empty description — marking llm_failed."
+                    f"  ⚠️  LLM returned empty description | {company_name} — marking {failed_status}."
                 )
             )
             self.collection.update_one(
                 {"_id": doc["_id"]},
                 {
                     "$set": {
-                        "runner_info.description_script": "llm_failed",
+                        "runner_info.description_script": failed_status,
                         "runner_info.description_script_url": company_url,
                         "runner_info.description_script_reason": "llm_returned_empty",
                         "runner_info.description_script_at": timezone.now().isoformat(),
