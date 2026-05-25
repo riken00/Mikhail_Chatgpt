@@ -25,3 +25,6 @@ dist/
 build/
 *.egg
 *.egg-info
+
+
+*.out
