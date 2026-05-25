@@ -2,6 +2,13 @@ from dotenv import load_dotenv
 import os, requests, time, json
 from logger import CustomLogger
 from .utils import call_8b_llm, call_120b_llm
+from app.utils.stats import StatsCollector
+import django
+import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "your_project_name.settings")
+django.setup()
+
 load_dotenv()
 logger = CustomLogger(log_folder="logs/small_llm")
 
@@ -11,6 +18,7 @@ MAX_RETRIES = 10
 
 class CallLLM:
     def __init__(self, small_llm: bool = True):
+        self.stats = StatsCollector("llm_calls")
         self.small_llm = small_llm
         self.url = os.getenv("SMALL_LLM_URL")
         self.sectors_list = [
@@ -38,11 +46,26 @@ class CallLLM:
         self.channels_str = "\n".join([f"  {k}: {v}" for k, v in self.channels_mapping.items()])
 
 
-    def call_llm(self,prompt: str) -> str:
-        if self.small_llm:
-            return call_8b_llm(prompt)
-        else:
-            return call_120b_llm(prompt)
+    def call_llm(self, prompt: str) -> dict:
+        start = time.time()
+        success = False
+
+        try:
+            if self.small_llm:
+                response = call_8b_llm(prompt)
+            else:
+                response = call_120b_llm(prompt)
+
+            success = True
+            return response
+
+        except Exception as e:
+            logger.error(f"LLM call failed: {e}")
+            return {}
+
+        finally:
+            total = time.time() - start
+            self.stats.log(success=success, processing_time=total)
     
     def get_sectors(self, title : str, descriptions : str) -> dict:
         prompt = f"""

@@ -63,3 +63,54 @@ class user_details(TimeStemp):
 
     def __str__(self):
         return self.email
+    
+class ProcessingStatsHourly(models.Model):
+    file_name = models.CharField(max_length=100)
+
+    date = models.DateField()
+    hour = models.IntegerField()
+
+    processed = models.IntegerField(default=0)
+    success = models.IntegerField(default=0)
+    failed = models.IntegerField(default=0)
+
+    total_time = models.FloatField(default=0.0)
+    avg_time = models.FloatField(default=0.0)
+
+    class Meta:
+        unique_together = ("file_name", "date", "hour")
+        indexes = [
+            models.Index(fields=["file_name", "date", "hour"]),
+        ]
+
+
+class ProcessingStatsDaily(models.Model):
+    file_name = models.CharField(max_length=100)
+
+    date = models.DateField()
+
+    processed = models.IntegerField(default=0)
+    success = models.IntegerField(default=0)
+    failed = models.IntegerField(default=0)
+
+    total_time = models.FloatField(default=0.0)
+    avg_time = models.FloatField(default=0.0)
+
+    class Meta:
+        unique_together = ("file_name", "date")
+        indexes = [
+            models.Index(fields=["file_name", "date"]),
+        ]
+
+
+class ProcessingStatsOverall(models.Model):
+    file_name = models.CharField(max_length=100, unique=True)
+
+    processed = models.BigIntegerField(default=0)
+    success = models.BigIntegerField(default=0)
+    failed = models.BigIntegerField(default=0)
+
+    total_time = models.FloatField(default=0.0)
+    avg_time = models.FloatField(default=0.0)
+
+    updated_at = models.DateTimeField(auto_now=True)

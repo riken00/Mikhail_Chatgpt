@@ -69,5 +69,4 @@ class Command(BaseCommand):
             '''
     
     def handle(self, *args, **option):
-
-        SeprateText()
+        pass

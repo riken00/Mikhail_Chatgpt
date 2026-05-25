@@ -165,7 +165,12 @@ class Crawler:
         queue: deque[tuple[str, int]] = deque()
         queue.append((start_url, 0))
 
+        failed_counts = 0
         while queue and len(self.pages) < self.config.max_pages:
+            if failed_counts >= 10:
+                logger.warning("Too many consecutive failures, stopping crawl.")
+                break
+            
             url, depth = queue.popleft()
             normalized = url.rstrip("/")
 
@@ -175,6 +180,7 @@ class Crawler:
 
             parsed = self._fetch_and_parse(url)
             if not parsed:
+                failed_counts += 1
                 continue
 
             logger.info(

@@ -6,6 +6,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from dotenv import load_dotenv
 import os, time, datetime
+from app.utils.stats import StatsCollector
 
 load_dotenv()
 logger = CustomLogger(log_folder="logs/news_tagger")
@@ -24,16 +25,20 @@ class Command(BaseCommand):
     help = "Tag news documents in MongoDB with sectors, channels, and entities using LLM."
 
     def add_arguments(self, parser):
-        parser.add_argument("--small-llm", action="store_true", default=True, help="Use 12B LLM. Default is small llm 8B.")
+        parser.add_argument("--small-llm", action="store_true", default=False, help="Use 12B LLM. Default is small llm 8B.")
         parser.add_argument("--max-workers", type=int, default=MAX_WORKERS, help="Parallel workers (default: 20).")
         parser.add_argument("--fetch-batch", type=int, default=FETCH_BATCH, help="Docs fetched per batch (default: 50).")
         parser.add_argument("--batch-write", type=int, default=BATCH_WRITE, help="Bulk write threshold (default: 20).")
 
     def handle(self, *args, **options):
+        self.stats = StatsCollector("news_tagger")
+        
         global processed_count, error_count
         processed_count = 0
         error_count     = 0
-
+        options["small_llm"] = False 
+        
+        
         self.llm         = CallLLM(small_llm=options["small_llm"])
         self.max_workers = options["max_workers"]
         self.fetch_batch = options["fetch_batch"]
@@ -140,6 +145,10 @@ class Command(BaseCommand):
 
     def _process_doc(self, doc: dict) -> UpdateOne | None:
         global processed_count, error_count
+
+        start_time = time.time()
+        success = False
+
         try:
             raw_desc = doc.get("description", "")
             if isinstance(raw_desc, dict):
@@ -147,7 +156,8 @@ class Command(BaseCommand):
             else:
                 description = raw_desc or ""
 
-            title         = doc.get("title", "")
+            title = doc.get("title", "")
+
             needs_tagging = not (doc.get("channel") and doc.get("sectors"))
             needs_entities = doc.get("llm_tagged_entities", 0) != 2
 
@@ -155,44 +165,53 @@ class Command(BaseCommand):
                 return None
 
             update_fields = {}
+
             t0 = time.time()
 
             if needs_tagging and needs_entities:
                 result = self.llm.get_all(title, description)
-                channels = {k: self.llm.channels_mapping[k] for k in result.get("channels", []) if k in self.llm.channels_mapping}
+
+                channels = {
+                    k: self.llm.channels_mapping[k]
+                    for k in result.get("channels", [])
+                    if k in self.llm.channels_mapping
+                }
+
                 update_fields.update({
-                    "channel":             channels,
-                    "sectors":             result.get("sectors", []),
-                    "llm_tagged":          True,
-                    "entities":            result.get("entities", []),
+                    "channel": channels,
+                    "sectors": result.get("sectors", []),
+                    "llm_tagged": True,
+                    "entities": result.get("entities", []),
                     "llm_tagged_entities": 2
                 })
 
             elif needs_tagging:
                 result = self.llm.get_all(title, description)
-                channels = {k: self.llm.channels_mapping[k] for k in result.get("channels", []) if k in self.llm.channels_mapping}
+
+                channels = {
+                    k: self.llm.channels_mapping[k]
+                    for k in result.get("channels", [])
+                    if k in self.llm.channels_mapping
+                }
+
                 update_fields.update({
-                    "channel":    channels,
-                    "sectors":    result.get("sectors", []),
+                    "channel": channels,
+                    "sectors": result.get("sectors", []),
                     "llm_tagged": True
                 })
 
             elif needs_entities:
                 result = self.llm.get_entities(title, description)
+
                 update_fields.update({
-                    "entities":            result.get("entities", []),
+                    "entities": result.get("entities", []),
                     "llm_tagged_entities": 2
                 })
 
-            total = round(time.time() - t0, 2)
-            print(f"{datetime.datetime.now()} | ID: {doc['_id']} | TOTAL: {total}s")
-            logger.info(f"ID: {doc['_id']} | total: {total}s")
+            success = True
 
             with lock:
                 processed_count += 1
-
-            if not update_fields:
-                return None
 
             return UpdateOne({"_id": doc["_id"]}, {"$set": update_fields})
 
@@ -201,3 +220,7 @@ class Command(BaseCommand):
                 error_count += 1
             logger.error(f"Doc error {doc.get('_id')}: {e}")
             return None
+
+        finally:
+            total_time = time.time() - start_time
+            self.stats.log(success=success, processing_time=total_time)

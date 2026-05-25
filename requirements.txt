@@ -19,12 +19,11 @@ idna==3.4
 jiter==0.14.0
 lxml==6.0.4
 MouseInfo==0.1.3
-mysqlclient==2.2.8
-numpy==2.4.4
+numpy
 openai==2.32.0
 outcome==1.2.0
 packaging==23.0
-pandas==3.0.2
+pandas
 PyAutoGUI==0.9.53
 pydantic==2.13.1
 pydantic_core==2.46.1

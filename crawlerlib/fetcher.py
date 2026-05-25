@@ -77,14 +77,14 @@ class Fetcher:
         """Fetch a single page and return a *FetchResult*."""
         url = normalize_url(url)
 
-        # robots.txt check
-        if self.config.respect_robots and not self._is_allowed(url):
-            logger.warning("Blocked by robots.txt: %s", url)
-            return FetchResult(
-                url=url, status_code=0, html="", headers={},
-                elapsed_ms=0, success=False,
-                error="Blocked by robots.txt",
-            )
+        # # robots.txt check
+        # if self.config.respect_robots and not self._is_allowed(url):
+        #     logger.warning("Blocked by robots.txt: %s", url)
+        #     return FetchResult(
+        #         url=url, status_code=0, html="", headers={},
+        #         elapsed_ms=0, success=False,
+        #         error="Blocked by robots.txt",
+        #     )
 
         # Rate-limit
         self._throttle()
@@ -94,7 +94,7 @@ class Fetcher:
         try:
             logger.info("Fetching: %s", url)
             resp = self._session.get(
-                url, headers=headers, timeout=self.config.timeout,
+                url, headers=headers, timeout=(self.config.timeout, self.config.timeout),
                 proxies={"http": self.config.proxy, "https": self.config.proxy} if self.config.proxy else None,
             )
             resp.raise_for_status()
