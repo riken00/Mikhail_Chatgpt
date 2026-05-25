@@ -322,8 +322,18 @@ class Command(BaseCommand):
         ]
         data = None
         for filter in filters:
-            data = self.collection.find_one_and_update(filter, {"$set": {"runner_info.description_script": "in_progress"}},return_document=True)
-            
+            final_filter = {
+                "$and": [
+                    filter,
+                    {
+                        "$or": [
+                            {"runner_info.description_script_run_count": {"$exists": False}},
+                            {"runner_info.description_script_run_count": {"$lt": 3}}
+                        ]
+                    }
+                ]
+            }
+            data = self.collection.find_one_and_update(final_filter, {"$set": {"runner_info.description_script": "in_progress"}},return_document=True)
             if data:
                 break
             
@@ -410,17 +420,16 @@ class Command(BaseCommand):
 
     def _run_pipeline( self, doc: dict, company_url: str, max_depth: int, max_pages: int ) -> str | None:
         company_name = doc.get("organization_name", "Unknown")
-        
+        company_id = doc.get("_id")
         crawled_text = self._crawl_website(
             company_url, max_depth=max_depth, max_pages=max_pages
         )
-        breakpoint()
         company_context = self._build_company_context(doc)
 
         # If crawl failed and no DB context either — mark as crawl_failed and skip
         if not crawled_text.strip() and not company_context.strip():
             self.stdout.write(
-                self.style.WARNING(f"  ⚠️  Nothing extracted — marking crawl_failed.")
+                self.style.WARNING(f"  ⚠️  Nothing extracted {company_name} | {company_id} — marking crawl_failed.")
             )
             self.collection.update_one(
                 {"_id": doc["_id"]},
@@ -430,6 +439,9 @@ class Command(BaseCommand):
                         "runner_info.description_script_url": company_url,
                         "runner_info.description_script_reason": "no_content_crawled",
                         "runner_info.description_script_at": timezone.now().isoformat(),
+                    },
+                    "$inc": {
+                        "runner_info.description_script_run_count": 1
                     }
                 },
             )
@@ -439,7 +451,7 @@ class Command(BaseCommand):
         if not crawled_text.strip():
             self.stdout.write(
                 self.style.WARNING(
-                    f"  ⚠️  Crawl returned no data | {company_name} — marking crawl_empty, skipping LLM."
+                    f"  ⚠️  Crawl returned no data | {company_name} | {company_id} — marking crawl_empty, skipping LLM."
                 )
             )
             self.collection.update_one(
@@ -450,13 +462,16 @@ class Command(BaseCommand):
                         "runner_info.description_script_url": company_url,
                         "runner_info.description_script_reason": "crawler_returned_no_pages",
                         "runner_info.description_script_at": timezone.now().isoformat(),
+                    },
+                    "$inc": {
+                        "runner_info.description_script_run_count": 1
                     }
                 },
             )
             return None
         
         if len(crawled_text.strip()) < 2000:
-            logger.warning(f"Pipeline | '{company_name}' | crawl returned very little text ({len(crawled_text.strip())} chars) — marking crawl_insufficient.")
+            logger.warning(f"Pipeline | '{company_name}' | {company_id}  | crawl returned very little text ({len(crawled_text.strip())} chars) — marking crawl_insufficient.")
             self.collection.update_one(
                 {"_id": doc["_id"]},
                 {"$set": {
@@ -464,7 +479,11 @@ class Command(BaseCommand):
                     "runner_info.description_script_url":    company_url,
                     "runner_info.description_script_reason": "crawler_returned_insufficient_text",
                     "runner_info.description_script_at":     timezone.now().isoformat(),
-                }}
+                },
+                 "$inc": {
+                        "runner_info.description_script_run_count": 1
+                }
+                }
             )
             return None
 
@@ -476,11 +495,11 @@ class Command(BaseCommand):
             failed_status = "llm_failed"
             if len(description.strip()) < 200 and len(description.strip()) > 0:
                 failed_status = "llm_short"
-                logger.warning(f"Pipeline | '{company_name}' | LLM returned short description ({len(description.strip())} chars).")
+                logger.warning(f"Pipeline | '{company_name}' | {company_id} | LLM returned short description ({len(description.strip())} chars).")
                 
             self.stdout.write(
                 self.style.WARNING(
-                    f"  ⚠️  LLM returned empty description | {company_name} — marking {failed_status}."
+                    f"  ⚠️  LLM returned empty description | {company_name} | {company_id} — marking {failed_status}."
                 )
             )
             self.collection.update_one(
@@ -491,6 +510,9 @@ class Command(BaseCommand):
                         "runner_info.description_script_url": company_url,
                         "runner_info.description_script_reason": "llm_returned_empty",
                         "runner_info.description_script_at": timezone.now().isoformat(),
+                    },
+                    "$inc": {
+                        "runner_info.description_script_run_count": 1
                     }
                 },
             )
@@ -506,7 +528,10 @@ class Command(BaseCommand):
                     "runner_info.description_script": "done",
                     "runner_info.description_script_url": company_url,
                     "runner_info.description_script_at": timezone.now().isoformat(),
-                }
+                },
+                "$inc": {
+                        "runner_info.description_script_run_count": 1
+                    }
             },
         )
         self.stdout.write(self.style.SUCCESS(f"  ✅ Saved (id={doc['_id']})"))
@@ -525,10 +550,12 @@ class Command(BaseCommand):
         config = CrawlConfig(
             max_depth=max_depth,
             max_pages=max_pages,
-            delay=1.5,
+            delay=0.5,
             same_domain_only=True,
             respect_robots=True,
-            page_intents=["about", "product", "services", "mission"],
+            max_retries=1,
+            timeout=5,
+            page_intents=["about", "product", "services"],
         )
         try:
             logger.info(f"Crawling {url} (depth={max_depth})")
